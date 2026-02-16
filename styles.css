@@ -1018,6 +1018,11 @@ span
     align-items: stretch;
 }
 
+.contact-card
+{
+    text-align: center;
+}
+
 /* CARDS */
 .contact-card,
 .contact-form {
@@ -1031,6 +1036,8 @@ span
     transition: all 0.35s ease;
     position: relative;
     overflow: hidden;
+    font-weight: 300;
+   
 }
 
 /* Glow hover effect */
