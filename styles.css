@@ -210,12 +210,46 @@ span
 
 .intro-buttons {
     display: flex;
-    gap: 14px;
+    gap: 16px;
     margin-top: 26px;
 }
 
+.intro-buttons .btn {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 8px;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    text-transform: none;
+}
 
+.intro-buttons .btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+    border: 2px solid var(--accent-soft);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(255, 75, 43, 0.15), 0 8px 24px rgba(0, 0, 0, 0.4);
+}
 
+.intro-buttons .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(255, 75, 43, 0.25), 0 14px 32px rgba(0, 0, 0, 0.5);
+}
+
+.intro-buttons .btn-secondary {
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    color: var(--muted);
+}
+
+.intro-buttons .btn-secondary:hover {
+    border-color: var(--accent-soft);
+    color: var(--text);
+    background: rgba(247, 123, 72, 0.06);
+    box-shadow: 0 0 20px rgba(247, 123, 72, 0.1);
+    transform: translateY(-3px);
+}
 
 .quick-stats {
     margin-top: 32px;
@@ -289,162 +323,508 @@ span
     margin-bottom: 8px;
 }
 
-/* About */
-.section-about .about-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 18px;
-    text-align: center;
-}
-
-.about-block {
-    padding: 16px 18px;
-    background: rgba(15, 16, 25, 0.95);
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.about-block h3 {
-    margin: 0 0 10px;
-    font-size: 14px;
-    text-transform: uppercase;
-}
-
-.about-block p {
-    margin: 0;
-    font-size: 14px;
-    color: var(--muted);
-}
 
 /* Skill deck */
+.section-skills {
+    font-family: "Pixelify Sans", "Press Start 2P", system-ui, sans-serif;
+}
+
 .section-skills .skill-legend {
     display: flex;
     flex-wrap: wrap;
-    gap: 18px;
-    font-size: 12px;
-    margin-bottom: 18px;
+    gap: 14px;
+    font-size: 13px;
+    margin-bottom: 28px;
     color: var(--muted);
+    justify-content: center;
 }
 
- .skill-deck { 
-     display: grid;
+.section-skills .skill-legend span {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 14px;
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    letter-spacing: 0.5px;
+}
+
+.section-skills .legend-king {
+    border-color: rgba(255, 200, 87, 0.3) !important;
+    color: var(--legendary);
+}
+
+.section-skills .legend-queen {
+    border-color: rgba(255, 75, 218, 0.3) !important;
+    color: var(--epic);
+}
+
+.section-skills .legend-jack {
+    border-color: rgba(75, 179, 255, 0.3) !important;
+    color: var(--rare);
+}
+
+.section-skills .legend-joker {
+    border-color: rgba(247, 123, 72, 0.3) !important;
+    color: var(--accent-soft);
+}
+
+.skill-deck {
+    display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 18px;
-} 
+    gap: 20px;
+    margin-bottom: 30px;
+}
 
- .skill-card {
+.skill-card {
     position: relative;
-    padding: 18px 16px 16px;
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.05), transparent 55%), #101018;
-    box-shadow: var(--shadow-soft);
+    padding: 32px 18px 32px;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    background: #0c0c14;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
     transform: translateY(0);
-    transition: transform 0.14s ease-out, box-shadow 0.14s ease-out;
-} 
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, border-color 0.2s ease-out;
+}
 
- .skill-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 42px rgba(0, 0, 0, 0.8);
-} 
+/* Pixel grid overlay */
+.skill-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 5px,
+            rgba(255, 255, 255, 0.02) 5px,
+            rgba(255, 255, 255, 0.02) 6px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 5px,
+            rgba(255, 255, 255, 0.02) 5px,
+            rgba(255, 255, 255, 0.02) 6px
+        );
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 12px;
+}
 
-.skill-rank {
-    font-family: "Press Start 2P";
-    font-size: 13px;
-    margin-bottom: 14px;
-} 
+/* Pixel art figure watermark */
+.skill-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 55%;
+    image-rendering: pixelated;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 0;
+}
 
- .skill-name {
-    font-size: 16px;
+.skill-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.9);
+}
+
+/* Card corner indicators */
+.card-corner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    line-height: 1;
+    gap: 2px;
+}
+
+.card-corner-top {
+    top: 10px;
+    left: 12px;
+}
+
+.card-corner-bottom {
+    bottom: 10px;
+    right: 12px;
+    transform: rotate(180deg);
+}
+
+.card-rank {
+    font-family: "Press Start 2P", monospace;
+    font-size: 14px;
+    display: block;
+    letter-spacing: normal;
+}
+
+.card-suit {
+    font-size: 14px;
+    display: block;
+    line-height: 1;
+    letter-spacing: normal;
+}
+
+/* Card center content */
+.card-center {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px 6px 10px;
+}
+
+.skill-name {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
     margin-bottom: 8px;
-} 
+    letter-spacing: 0.5px;
+}
 
- .skill-desc {
-    font-size: 13px;
+.skill-desc {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 14px;
     color: var(--muted);
-} 
+    line-height: 1.5;
+    margin: 0;
+}
 
- /* Rarity colors */
+/* ——— KING cards (gold / legendary) ——— */
 .skill-king {
     border-color: var(--legendary);
-} 
-
- .skill-queen {
-    border-color: var(--epic);
+    background:
+        radial-gradient(circle at top, rgba(255, 200, 87, 0.12), transparent 60%),
+        #0c0c14;
 }
 
+.skill-king .card-rank,
+.skill-king .card-suit {
+    color: var(--legendary);
+}
+
+.skill-king .skill-name {
+    color: var(--legendary);
+}
+
+.skill-king:hover {
+    border-color: var(--legendary);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 200, 87, 0.15);
+}
+
+.skill-king::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect x='4' y='0' width='1' height='1' fill='%23ffc857'/%3E%3Crect x='7' y='0' width='2' height='1' fill='%23ffc857'/%3E%3Crect x='11' y='0' width='1' height='1' fill='%23ffc857'/%3E%3Crect x='3' y='1' width='10' height='1' fill='%23ffc857'/%3E%3Crect x='3' y='2' width='10' height='1' fill='%23ffc857'/%3E%3Crect x='4' y='3' width='8' height='1' fill='%23ffc857'/%3E%3Crect x='5' y='4' width='6' height='1' fill='%23ffc857'/%3E%3Crect x='5' y='5' width='6' height='2' fill='%23ffc857'/%3E%3Crect x='6' y='7' width='4' height='1' fill='%23ffc857'/%3E%3Crect x='4' y='8' width='8' height='1' fill='%23ffc857'/%3E%3Crect x='3' y='9' width='10' height='3' fill='%23ffc857'/%3E%3Crect x='4' y='12' width='8' height='2' fill='%23ffc857'/%3E%3Crect x='4' y='14' width='8' height='2' fill='%23ffc857'/%3E%3C/svg%3E");
+}
+
+/* ——— QUEEN cards (pink / epic) ——— */
+.skill-queen {
+    border-color: var(--epic);
+    background:
+        radial-gradient(circle at top, rgba(255, 75, 218, 0.12), transparent 60%),
+        #0c0c14;
+}
+
+.skill-queen .card-rank,
+.skill-queen .card-suit {
+    color: var(--epic);
+}
+
+.skill-queen .skill-name {
+    color: var(--epic);
+}
+
+.skill-queen:hover {
+    border-color: var(--epic);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 75, 218, 0.15);
+}
+
+.skill-queen::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect x='5' y='0' width='2' height='1' fill='%23ff4bda'/%3E%3Crect x='9' y='0' width='2' height='1' fill='%23ff4bda'/%3E%3Crect x='4' y='1' width='8' height='1' fill='%23ff4bda'/%3E%3Crect x='5' y='2' width='6' height='1' fill='%23ff4bda'/%3E%3Crect x='5' y='3' width='6' height='1' fill='%23ff4bda'/%3E%3Crect x='5' y='4' width='6' height='2' fill='%23ff4bda'/%3E%3Crect x='6' y='6' width='4' height='1' fill='%23ff4bda'/%3E%3Crect x='4' y='7' width='8' height='1' fill='%23ff4bda'/%3E%3Crect x='5' y='8' width='6' height='2' fill='%23ff4bda'/%3E%3Crect x='4' y='10' width='8' height='1' fill='%23ff4bda'/%3E%3Crect x='3' y='11' width='10' height='1' fill='%23ff4bda'/%3E%3Crect x='2' y='12' width='12' height='1' fill='%23ff4bda'/%3E%3Crect x='2' y='13' width='12' height='2' fill='%23ff4bda'/%3E%3Crect x='1' y='15' width='14' height='1' fill='%23ff4bda'/%3E%3C/svg%3E");
+}
+
+/* ——— JACK cards (blue / rare) ——— */
 .skill-jack {
     border-color: var(--rare);
+    background:
+        radial-gradient(circle at top, rgba(75, 179, 255, 0.12), transparent 60%),
+        #0c0c14;
 }
 
+.skill-jack .card-rank,
+.skill-jack .card-suit {
+    color: var(--rare);
+}
+
+.skill-jack .skill-name {
+    color: var(--rare);
+}
+
+.skill-jack:hover {
+    border-color: var(--rare);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.9), 0 0 30px rgba(75, 179, 255, 0.15);
+}
+
+.skill-jack::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect x='5' y='0' width='7' height='1' fill='%234bb3ff'/%3E%3Crect x='4' y='1' width='8' height='1' fill='%234bb3ff'/%3E%3Crect x='5' y='2' width='6' height='1' fill='%234bb3ff'/%3E%3Crect x='5' y='3' width='6' height='2' fill='%234bb3ff'/%3E%3Crect x='6' y='5' width='4' height='2' fill='%234bb3ff'/%3E%3Crect x='4' y='7' width='8' height='1' fill='%234bb3ff'/%3E%3Crect x='5' y='8' width='6' height='3' fill='%234bb3ff'/%3E%3Crect x='5' y='11' width='6' height='2' fill='%234bb3ff'/%3E%3Crect x='5' y='13' width='2' height='1' fill='%234bb3ff'/%3E%3Crect x='9' y='13' width='2' height='1' fill='%234bb3ff'/%3E%3Crect x='4' y='14' width='3' height='2' fill='%234bb3ff'/%3E%3Crect x='9' y='14' width='3' height='2' fill='%234bb3ff'/%3E%3C/svg%3E");
+}
+
+/* ——— JOKER cards (orange / wild) ——— */
 .skill-joker {
-    border-style: dashed;
     border-color: var(--accent-soft);
-} 
+    border-style: dashed;
+    background:
+        radial-gradient(circle at top, rgba(247, 123, 72, 0.12), transparent 60%),
+        #0c0c14;
+}
+
+.skill-joker .card-rank,
+.skill-joker .card-suit {
+    color: var(--accent-soft);
+}
+
+.skill-joker .skill-name {
+    color: var(--accent-soft);
+}
+
+.skill-joker:hover {
+    border-color: var(--accent-soft);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.9), 0 0 30px rgba(247, 123, 72, 0.15);
+}
+
+.skill-joker::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect x='2' y='0' width='2' height='1' fill='%23f77b48'/%3E%3Crect x='7' y='0' width='2' height='1' fill='%23f77b48'/%3E%3Crect x='12' y='0' width='2' height='1' fill='%23f77b48'/%3E%3Crect x='3' y='1' width='2' height='1' fill='%23f77b48'/%3E%3Crect x='7' y='1' width='2' height='1' fill='%23f77b48'/%3E%3Crect x='11' y='1' width='2' height='1' fill='%23f77b48'/%3E%3Crect x='4' y='2' width='8' height='1' fill='%23f77b48'/%3E%3Crect x='4' y='3' width='8' height='1' fill='%23f77b48'/%3E%3Crect x='5' y='4' width='6' height='1' fill='%23f77b48'/%3E%3Crect x='5' y='5' width='6' height='2' fill='%23f77b48'/%3E%3Crect x='6' y='7' width='4' height='1' fill='%23f77b48'/%3E%3Crect x='3' y='8' width='3' height='1' fill='%23f77b48'/%3E%3Crect x='10' y='8' width='3' height='1' fill='%23f77b48'/%3E%3Crect x='4' y='9' width='8' height='2' fill='%23f77b48'/%3E%3Crect x='4' y='11' width='3' height='1' fill='%23f77b48'/%3E%3Crect x='9' y='11' width='3' height='1' fill='%23f77b48'/%3E%3Crect x='4' y='12' width='8' height='1' fill='%23f77b48'/%3E%3Crect x='5' y='13' width='2' height='1' fill='%23f77b48'/%3E%3Crect x='9' y='13' width='2' height='1' fill='%23f77b48'/%3E%3Crect x='4' y='14' width='3' height='1' fill='%23f77b48'/%3E%3Crect x='9' y='14' width='3' height='1' fill='%23f77b48'/%3E%3Crect x='3' y='15' width='4' height='1' fill='%23f77b48'/%3E%3Crect x='9' y='15' width='4' height='1' fill='%23f77b48'/%3E%3C/svg%3E");
+}
+
+/* Shuffle button pixel style */
+.section-skills .btn-ghost {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.section-skills .btn-ghost:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 
 
-/* Added Component */
-
-
-
-/* ```````````````` */
 
 /* Projects */
+.section-projects {
+    font-family: 'Courier New', Courier, monospace;
+    /* text-align: center; */
+    font-weight: 100;
+    text-align: center;
+}
+
 .section-projects .project-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
+    gap: 20px;
+    text-align: center;
 }
 
 .project-card {
     position: relative;
-    padding: 22px 20px 20px;
-    border-radius: 18px;
-    background: radial-gradient(circle at top left, rgba(255, 75, 43, 0.2), transparent 55%), #101018;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: var(--shadow-soft);
+    padding: 32px 18px 32px;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    background: #0c0c14;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    transform: translateY(0);
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, border-color 0.2s ease-out;
+
 }
 
-.project-label {
+/* Pixel grid overlay for projects */
+.project-card::before {
+    content: '';
     position: absolute;
-    top: 16px;
-    right: 16px;
-    padding: 4px 10px;
-    border-radius: 999px;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 5px,
+            rgba(255, 255, 255, 0.02) 5px,
+            rgba(255, 255, 255, 0.02) 6px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 5px,
+            rgba(255, 255, 255, 0.02) 5px,
+            rgba(255, 255, 255, 0.02) 6px
+        );
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 12px;
 }
 
-.project-legendary {
-    background: rgba(255, 200, 87, 0.12);
+/* Pixel art watermark for projects */
+.project-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 35%;
+    image-rendering: pixelated;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+}
+
+/* Project card center — centered content for clearer presentation */
+.project-card .card-center {
+    text-align: center;
+    padding: 16px 14px;
+}
+
+/* Keep project bullet lists compact and centered within the card */
+.project-bullets {
+    display: inline-block;
+    text-align: left;
+    margin: 0 0 14px;
+    padding-left: 18px;
+}
+
+/* Project badge */
+.project-badge {
+    display: inline-block;
+    font-family: "Press Start 2P", monospace;
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+/* ——— LEGENDARY project (gold) ——— */
+.project-card.project-legendary {
+    border-color: var(--legendary);
+    background:
+        radial-gradient(circle at top, rgba(255, 200, 87, 0.12), transparent 60%),
+        #0c0c14;
+}
+
+.project-legendary .card-rank,
+.project-legendary .card-suit {
     color: var(--legendary);
 }
 
-.project-epic {
-    background: rgba(255, 75, 218, 0.12);
+.project-legendary .project-badge {
+    background: rgba(255, 200, 87, 0.15);
+    color: var(--legendary);
+}
+
+.project-legendary .project-title {
+    color: var(--legendary);
+}
+
+.project-legendary:hover {
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 200, 87, 0.15);
+}
+
+.project-legendary::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect x='4' y='0' width='1' height='1' fill='%23ffc857'/%3E%3Crect x='7' y='0' width='2' height='1' fill='%23ffc857'/%3E%3Crect x='11' y='0' width='1' height='1' fill='%23ffc857'/%3E%3Crect x='3' y='1' width='10' height='1' fill='%23ffc857'/%3E%3Crect x='3' y='2' width='10' height='1' fill='%23ffc857'/%3E%3Crect x='4' y='3' width='8' height='1' fill='%23ffc857'/%3E%3Crect x='5' y='4' width='6' height='1' fill='%23ffc857'/%3E%3Crect x='5' y='5' width='6' height='2' fill='%23ffc857'/%3E%3Crect x='6' y='7' width='4' height='1' fill='%23ffc857'/%3E%3Crect x='4' y='8' width='8' height='1' fill='%23ffc857'/%3E%3Crect x='3' y='9' width='10' height='3' fill='%23ffc857'/%3E%3Crect x='4' y='12' width='8' height='2' fill='%23ffc857'/%3E%3Crect x='4' y='14' width='8' height='2' fill='%23ffc857'/%3E%3C/svg%3E");
+}
+
+/* ——— EPIC project (pink) ——— */
+.project-card.project-epic {
+    border-color: var(--epic);
+    background:
+        radial-gradient(circle at top, rgba(255, 75, 218, 0.12), transparent 60%),
+        #0c0c14;
+}
+
+.project-epic .card-rank,
+.project-epic .card-suit {
     color: var(--epic);
 }
 
-.project-rare {
-    background: rgba(75, 179, 255, 0.12);
+.project-epic .project-badge {
+    background: rgba(255, 75, 218, 0.15);
+    color: var(--epic);
+}
+
+.project-epic .project-title {
+    color: var(--epic);
+}
+
+.project-epic:hover {
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 75, 218, 0.15);
+}
+
+.project-epic::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect x='5' y='0' width='2' height='1' fill='%23ff4bda'/%3E%3Crect x='9' y='0' width='2' height='1' fill='%23ff4bda'/%3E%3Crect x='4' y='1' width='8' height='1' fill='%23ff4bda'/%3E%3Crect x='5' y='2' width='6' height='1' fill='%23ff4bda'/%3E%3Crect x='5' y='3' width='6' height='1' fill='%23ff4bda'/%3E%3Crect x='5' y='4' width='6' height='2' fill='%23ff4bda'/%3E%3Crect x='6' y='6' width='4' height='1' fill='%23ff4bda'/%3E%3Crect x='4' y='7' width='8' height='1' fill='%23ff4bda'/%3E%3Crect x='5' y='8' width='6' height='2' fill='%23ff4bda'/%3E%3Crect x='4' y='10' width='8' height='1' fill='%23ff4bda'/%3E%3Crect x='3' y='11' width='10' height='1' fill='%23ff4bda'/%3E%3Crect x='2' y='12' width='12' height='1' fill='%23ff4bda'/%3E%3Crect x='2' y='13' width='12' height='2' fill='%23ff4bda'/%3E%3Crect x='1' y='15' width='14' height='1' fill='%23ff4bda'/%3E%3C/svg%3E");
+}
+
+/* ——— RARE project (blue) ——— */
+.project-card.project-rare {
+    border-color: var(--rare);
+    background:
+        radial-gradient(circle at top, rgba(75, 179, 255, 0.12), transparent 60%),
+        #0c0c14;
+}
+
+.project-rare .card-rank,
+.project-rare .card-suit {
     color: var(--rare);
 }
 
+.project-rare .project-badge {
+    background: rgba(75, 179, 255, 0.15);
+    color: var(--rare);
+}
+
+.project-rare .project-title {
+    color: var(--rare);
+}
+
+.project-rare:hover {
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.9), 0 0 30px rgba(75, 179, 255, 0.15);
+}
+
+.project-rare::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect x='5' y='0' width='7' height='1' fill='%234bb3ff'/%3E%3Crect x='4' y='1' width='8' height='1' fill='%234bb3ff'/%3E%3Crect x='5' y='2' width='6' height='1' fill='%234bb3ff'/%3E%3Crect x='5' y='3' width='6' height='2' fill='%234bb3ff'/%3E%3Crect x='6' y='5' width='4' height='2' fill='%234bb3ff'/%3E%3Crect x='4' y='7' width='8' height='1' fill='%234bb3ff'/%3E%3Crect x='5' y='8' width='6' height='3' fill='%234bb3ff'/%3E%3Crect x='5' y='11' width='6' height='2' fill='%234bb3ff'/%3E%3Crect x='5' y='13' width='2' height='1' fill='%234bb3ff'/%3E%3Crect x='9' y='13' width='2' height='1' fill='%234bb3ff'/%3E%3Crect x='4' y='14' width='3' height='2' fill='%234bb3ff'/%3E%3Crect x='9' y='14' width='3' height='2' fill='%234bb3ff'/%3E%3C/svg%3E");
+}
+
+/* Project card button */
+.project-card .btn-ghost {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
 .project-title {
-    margin: 0 0 6px;
-    font-size: 18px;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    letter-spacing: 0.5px;
 }
 
 .project-tech {
+    font-family: "Pixelify Sans", sans-serif;
     margin: 0 0 10px;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--muted);
 }
 
 .project-desc {
+    font-family: "Pixelify Sans", sans-serif;
     margin: 0 0 10px;
     font-size: 14px;
+    line-height: 1.5;
 }
 
 .project-bullets {
@@ -452,6 +832,7 @@ span
     padding: 0;
     font-size: 13px;
     color: var(--muted);
+    line-height: 1.5;
 }
 
 /* Experience */
@@ -552,29 +933,26 @@ span
 
 
 /* Achievements */
-.section-achievements .achievement-grid {
+.section-achievements .cards-wrapper {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
 
-.achievement-card {
-    padding: 18px 16px 16px;
-    border-radius: 16px;
-    background: #101018;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: var(--shadow-soft);
+.section-achievements .card__content .achievement-rarity {
+    margin-bottom: 10px;
 }
 
-.achievement-card h3 {
-    margin: 8px 0 8px;
-    font-size: 15px;
-}
-
-.achievement-card p {
+.section-achievements .card__content p {
     margin: 0 0 10px;
     font-size: 13px;
     color: var(--muted);
+}
+
+.section-achievements .card__content h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
 }
 
 .achievement-rarity {
@@ -619,6 +997,11 @@ span
     margin-top: 6px;
     font-size: 11px;
     color: var(--muted);
+}
+
+.section-achievements .card__content .xp-text {
+    margin-top: 6px;
+    margin-bottom: 0;
 }
 
 /* Contact */
@@ -768,9 +1151,15 @@ span
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .section-about .about-grid,
-    .section-skills .skill-deck,
-    .section-achievements .achievement-grid {
+    .section-about .about-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .section-achievements .cards-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-skills .skill-deck {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -810,9 +1199,28 @@ span
     }
 
     .section-about .about-grid,
-    .section-skills .skill-deck,
-    .section-achievements .achievement-grid,
     .quick-stats {
         grid-template-columns: minmax(0, 1fr);
+    }
+
+    .section-achievements .cards-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .section-skills .skill-deck {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .skill-card {
+        padding: 28px 14px 28px;
+    }
+
+    .card-rank {
+        font-size: 12px;
+    }
+
+    .card-suit {
+        font-size: 12px;
     }
 }

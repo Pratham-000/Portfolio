@@ -1,5 +1,6 @@
 // Set year in footer
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Shuffle skill deck
 const shuffleBtn = document.getElementById("shuffleSkillsBtn");
@@ -16,9 +17,54 @@ function shuffleNodes(parent) {
 
 if (shuffleBtn && skillDeck) {
   shuffleBtn.addEventListener("click", () => {
-    shuffleNodes(skillDeck);
-    shuffleBtn.textContent = "Shuffled!";
-    setTimeout(() => (shuffleBtn.textContent = "Shuffle Deck"), 1200);
+    if (shuffleBtn.disabled) return;
+    shuffleBtn.disabled = true;
+    shuffleBtn.textContent = "Shuffling...";
+
+    const cards = Array.from(skillDeck.children);
+    const stagger = 50;
+    const animDuration = 300;
+    const totalOut = animDuration + cards.length * stagger;
+
+    cards.forEach((card, i) => {
+      card.style.transition =
+        "transform " + animDuration + "ms ease-in " + i * stagger + "ms, " +
+        "opacity " + animDuration + "ms ease-in " + i * stagger + "ms";
+      card.style.transform = "scale(0.3) rotateZ(15deg)";
+      card.style.opacity = "0";
+    });
+
+    setTimeout(() => {
+      shuffleNodes(skillDeck);
+      const newCards = Array.from(skillDeck.children);
+
+      newCards.forEach((card) => {
+        card.style.transition = "none";
+        card.style.transform = "scale(0.3) rotateZ(-15deg)";
+        card.style.opacity = "0";
+      });
+
+      void skillDeck.offsetHeight;
+
+      newCards.forEach((card, i) => {
+        card.style.transition =
+          "transform " + animDuration + "ms ease-out " + i * stagger + "ms, " +
+          "opacity " + animDuration + "ms ease-out " + i * stagger + "ms";
+        card.style.transform = "";
+        card.style.opacity = "";
+      });
+
+      const totalIn = animDuration + newCards.length * stagger;
+      setTimeout(() => {
+        newCards.forEach((card) => {
+          card.style.transition = "";
+          card.style.transform = "";
+          card.style.opacity = "";
+        });
+        shuffleBtn.textContent = "Shuffle Deck";
+        shuffleBtn.disabled = false;
+      }, totalIn);
+    }, totalOut);
   });
 }
 
