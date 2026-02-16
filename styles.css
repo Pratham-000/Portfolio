@@ -43,6 +43,9 @@ body {
     z-index: -1;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 /* Top nav */
 .top-nav {
     position: sticky;
@@ -58,9 +61,13 @@ body {
 }
 
 .top-nav .logo {
-    font-family: "Press Start 2P", system-ui;
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 1000;
+    /* or 600 */
+    font-style: normal;
     letter-spacing: 2px;
-    font-size: 12px;
+    font-size: 17px;
     color: var(--accent-soft);
 }
 
@@ -75,6 +82,17 @@ body {
 
 .top-nav nav a:hover {
     color: var(--accent);
+}
+span
+{
+    font-family: "Pixelify Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 1000;
+        /* or 600 */
+        font-style: normal;
+        letter-spacing: 2px;
+        font-size: 2rem;
+        color: var(--accent-soft);
 }
 
 /* Generic sections */
@@ -96,12 +114,14 @@ body {
     font-size: 20px;
     margin-bottom: 10px;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .section-subtitle {
     margin: 0 0 40px;
     color: var(--muted);
-    max-width: 640px;
+    max-width: 100%;
+    text-align: center;
 }
 
 /* Buttons */
@@ -194,6 +214,9 @@ body {
     margin-top: 26px;
 }
 
+
+
+
 .quick-stats {
     margin-top: 32px;
     display: grid;
@@ -271,6 +294,7 @@ body {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 18px;
+    text-align: center;
 }
 
 .about-block {
@@ -302,13 +326,13 @@ body {
     color: var(--muted);
 }
 
-.skill-deck {
-    display: grid;
+ .skill-deck { 
+     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 18px;
-}
+} 
 
-.skill-card {
+ .skill-card {
     position: relative;
     padding: 18px 16px 16px;
     border-radius: 14px;
@@ -317,35 +341,35 @@ body {
     box-shadow: var(--shadow-soft);
     transform: translateY(0);
     transition: transform 0.14s ease-out, box-shadow 0.14s ease-out;
-}
+} 
 
-.skill-card:hover {
+ .skill-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 20px 42px rgba(0, 0, 0, 0.8);
-}
+} 
 
 .skill-rank {
     font-family: "Press Start 2P";
     font-size: 13px;
     margin-bottom: 14px;
-}
+} 
 
-.skill-name {
+ .skill-name {
     font-size: 16px;
     margin-bottom: 8px;
-}
+} 
 
-.skill-desc {
+ .skill-desc {
     font-size: 13px;
     color: var(--muted);
-}
+} 
 
-/* Rarity colors */
+ /* Rarity colors */
 .skill-king {
     border-color: var(--legendary);
-}
+} 
 
-.skill-queen {
+ .skill-queen {
     border-color: var(--epic);
 }
 
@@ -356,7 +380,14 @@ body {
 .skill-joker {
     border-style: dashed;
     border-color: var(--accent-soft);
-}
+} 
+
+
+/* Added Component */
+
+
+
+/* ```````````````` */
 
 /* Projects */
 .section-projects .project-grid {
@@ -423,41 +454,102 @@ body {
     color: var(--muted);
 }
 
-/* Timeline */
-.section-experience .timeline {
-    border-left: 2px dashed rgba(255, 255, 255, 0.16);
-    margin-left: 10px;
-    padding-left: 26px;
+/* Experience */
+
+.section-experience {
+    padding: 80px 20px;
 }
 
-.timeline-item {
-    position: relative;
-    margin-bottom: 26px;
+/* GRID */
+.section-experience .cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    gap: 50px;
+    margin-top: 50px;
 }
 
-.timeline-badge {
-    position: absolute;
-    left: -38px;
-    top: 0;
-    transform: translateX(-50%);
-    font-family: "Press Start 2P";
-    font-size: 10px;
-    padding: 4px 6px;
-    border-radius: 999px;
-    background: #111119;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+/* CARD */
+.card {
+    background: #25272e;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    min-height: 230px;
+    transition: 0.25s ease;
 }
 
-.timeline-content h3 {
-    margin: 0 0 6px;
-    font-size: 15px;
+.card:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+    transform: translateY(-4px);
 }
 
-.timeline-content p {
-    margin: 0;
-    color: var(--muted);
+/* Top bar */
+.tools {
+    display: flex;
+    gap: 8px;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Dots */
+.box {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.red {
+    background: #ff5f56;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
+
+/* Content */
+.card__content {
+    padding: 24px;
+}
+
+.card__content h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.card__content .duration {
+    font-size: 13px;
+    color: #9ca3af;
+    margin-bottom: 14px;
+}
+
+.card__content p {
     font-size: 14px;
+    color: #d1d5db;
+    margin: 0;
+    line-height: 1.6;
 }
+
+/* Responsive */
+@media (max-width: 992px) {
+    .section-experience .cards-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .section-experience .cards-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 
 /* Achievements */
 .section-achievements .achievement-grid {
@@ -530,33 +622,69 @@ body {
 }
 
 /* Contact */
+.section-contact {
+    padding: 100px 20px;
+}
+
+/* 1fr : 3fr layout */
 .section-contact .contact-grid {
     display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
-    gap: 30px;
+    grid-template-columns: 2fr 3fr;
+    gap: 60px;
+    margin-top: 60px;
+    align-items: stretch;
 }
 
-.contact-card {
-    padding: 18px 18px 16px;
-    border-radius: 16px;
-    background: #101018;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+/* CARDS */
+.contact-card,
+.contact-form {
+    padding: 35px;
+    border-radius: 18px;
+    background: linear-gradient(145deg,
+            rgba(17, 19, 25, 0.95),
+            rgba(10, 12, 18, 0.95));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.contact-card h3 {
+/* Glow hover effect */
+.contact-card:hover,
+.contact-form:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 120, 70, 0.6);
+    box-shadow: 0 20px 40px rgba(255, 120, 70, 0.08);
+}
+
+/* HEADINGS */
+.contact-card h3,
+.contact-form h3 {
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
 }
 
+/* CONTACT LIST */
 .contact-card ul {
     list-style: none;
+    padding: 15px;
     margin: 0;
-    padding: 0;
     font-size: 14px;
 }
 
 .contact-card li {
-    margin-bottom: 6px;
+    margin-bottom: 14px;
+    margin: 10px;
+    color: #d1d5db;
+}
+
+.contact-card strong {
+    color: #ffffff;
+    font-weight: 500;
 }
 
 .contact-card a {
@@ -568,49 +696,58 @@ body {
     text-decoration: underline;
 }
 
-.contact-form {
-    padding: 18px 18px 16px;
-    border-radius: 16px;
-    background: #101018;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.contact-form h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
+/* FORM GROUP */
+.form-group {
+    margin-bottom: 18px;
 }
 
 .contact-form label {
     display: block;
     font-size: 13px;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
+    color: #9ca3af;
 }
 
+/* INPUTS */
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    margin-top: 4px;
-    padding: 9px 10px;
+    padding: 11px 12px;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    background: #050608;
-    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #0b0d12;
+    color: #ffffff;
+    font-size: 14px;
     font-family: inherit;
-    font-size: 13px;
+    transition: 0.2s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--accent-soft);
+    background: #0e1118;
 }
 
+/* BUTTON */
+.contact-form .btn {
+    margin-top: 10px;
+}
+
+/* STATUS TEXT */
 .form-status {
-    margin-top: 8px;
-    font-size: 12px;
-    color: var(--muted);
+    margin-top: 12px;
+    font-size: 13px;
+    color: #9ca3af;
 }
 
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .section-contact .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
 /* Footer */
 .footer {
     padding: 20px 8vw 30px;
