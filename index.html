@@ -20,21 +20,26 @@
     <div class="bg-overlay"></div>
 
     <!-- Top Nav -->
-    <header class="top-nav">
+    <header class="top-nav" id="topNav">
       <div class="logo">PRATHAM.dev</div>
-      <nav>
-        <a href="#intro">Intro</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Education</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#contact">Contact</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#intro" data-section="intro">Intro</a>
+        <a href="#skills" data-section="skills">Skills</a>
+        <a href="#projects" data-section="projects">Projects</a>
+        <a href="#experience" data-section="experience">Education</a>
+        <a href="#achievements" data-section="achievements">Achievements</a>
+        <a href="#contact" data-section="contact">Contact</a>
       </nav>
     </header>
 
     <!-- Intro / Hero -->
-
     <section id="intro" class="section section-intro">
+      <canvas id="pixelBg"></canvas>
       <div class="intro-content">
         <p class="eyebrow">WELCOME PLAYER ONE</p>
         <h1 class="intro-title">Hi, I'm <span>Pratham Arora</span></h1>
@@ -80,7 +85,6 @@
     </section>
 
     <!-- Skill Deck -->
-
     <section id="skills" class="section section-skills">
       <h2 class="section-title">My Skill Deck</h2>
       <p class="section-subtitle">
@@ -133,7 +137,6 @@
         </div>
 
         <!-- Queens -->
-
         <div class="skill-card skill-queen">
           <div class="card-corner card-corner-top">
             <span class="card-rank">Q</span>
@@ -242,185 +245,205 @@
       <button class="btn btn-ghost" id="shuffleSkillsBtn">Shuffle Deck</button>
     </section>
 
-    <!-- Projects -->
-
+    <!-- Projects Timeline -->
     <section id="projects" class="section section-projects">
       <h2 class="section-title">Where Did My Time Go?</h2>
       <p class="section-subtitle">
-        A snapshot of the worlds I’ve built recently.
+        A snapshot of the worlds I've built recently.
       </p>
 
-      <div class="project-grid">
+      <div class="project-timeline">
         <!-- Secure API Gateway -->
-        <article class="project-card project-legendary">
-          <div class="card-corner card-corner-top">
-            <span class="card-rank">★</span>
-            <span class="card-suit">♔</span>
-          </div>
-          <div class="card-center project-center">
-            <div class="project-badge">LEGENDARY</div>
-            <h3 class="project-title">Secure API Gateway</h3>
-            <p class="project-tech">
-              C++, Node.js, MongoDB, JWT, PostgreSQL, Linux
-            </p>
-            <p class="project-desc">
-              Designed and implemented a secure API gateway with JWT
-              authentication, connection pooling, and optimized query handling
-              to improve throughput and lower latency.
-            </p>
-            <ul class="project-bullets">
-              <li>Centralized logging and monitoring on Linux servers.</li>
-              <li>
-                Resilient architecture with production-grade observability.
-              </li>
-            </ul>
-          </div>
-          <div class="card-corner card-corner-bottom">
-            <span class="card-rank">★</span>
-            <span class="card-suit">♔</span>
-          </div>
-        </article>
+        <div class="timeline-item timeline-left">
+          <div class="timeline-node node-legendary"></div>
+          <article class="project-card project-legendary">
+            <div class="card-corner card-corner-top">
+              <span class="card-rank">★</span>
+              <span class="card-suit">♔</span>
+            </div>
+            <div class="card-center project-center">
+              <div class="project-badge">LEGENDARY</div>
+              <h3 class="project-title">Secure API Gateway</h3>
+              <p class="project-tech">
+                C++, Node.js, MongoDB, JWT, PostgreSQL, Linux
+              </p>
+              <p class="project-desc">
+                Designed and implemented a secure API gateway with JWT
+                authentication, connection pooling, and optimized query handling
+                to improve throughput and lower latency.
+              </p>
+              <ul class="project-bullets">
+                <li>Centralized logging and monitoring on Linux servers.</li>
+                <li>
+                  Resilient architecture with production-grade observability.
+                </li>
+              </ul>
+            </div>
+            <div class="card-corner card-corner-bottom">
+              <span class="card-rank">★</span>
+              <span class="card-suit">♔</span>
+            </div>
+          </article>
+        </div>
 
         <!-- Blogify Platform -->
-        <article class="project-card project-epic">
-          <div class="card-corner card-corner-top">
-            <span class="card-rank">◆</span>
-            <span class="card-suit">♛</span>
-          </div>
-          <div class="card-center project-center">
-            <div class="project-badge">EPIC</div>
-            <h3 class="project-title">Blogify Platform</h3>
-            <p class="project-tech">React, Node.js, Express, MongoDB, JWT</p>
-            <p class="project-desc">
-              Full‑stack blogging platform with role‑based access control and
-              secure, documented APIs for content and user management.
-            </p>
-            <ul class="project-bullets">
-              <li>JWT authentication and protected routes.</li>
-              <li>Well‑documented REST APIs for posts, comments, and users.</li>
-            </ul>
-          </div>
-          <div class="card-corner card-corner-bottom">
-            <span class="card-rank">◆</span>
-            <span class="card-suit">♛</span>
-          </div>
-        </article>
+        <div class="timeline-item timeline-right">
+          <div class="timeline-node node-epic"></div>
+          <article class="project-card project-epic">
+            <div class="card-corner card-corner-top">
+              <span class="card-rank">◆</span>
+              <span class="card-suit">♛</span>
+            </div>
+            <div class="card-center project-center">
+              <div class="project-badge">EPIC</div>
+              <h3 class="project-title">Blogify Platform</h3>
+              <p class="project-tech">React, Node.js, Express, MongoDB, JWT</p>
+              <p class="project-desc">
+                Full‑stack blogging platform with role‑based access control and
+                secure, documented APIs for content and user management.
+              </p>
+              <ul class="project-bullets">
+                <li>JWT authentication and protected routes.</li>
+                <li>Well‑documented REST APIs for posts, comments, and users.</li>
+              </ul>
+            </div>
+            <div class="card-corner card-corner-bottom">
+              <span class="card-rank">◆</span>
+              <span class="card-suit">♛</span>
+            </div>
+          </article>
+        </div>
 
         <!-- Smart Transit Portal -->
-        <article class="project-card project-epic">
-          <div class="card-corner card-corner-top">
-            <span class="card-rank">◆</span>
-            <span class="card-suit">♛</span>
-          </div>
-          <div class="card-center project-center">
-            <div class="project-badge">EPIC</div>
-            <h3 class="project-title">Smart Transit Portal</h3>
-            <p class="project-tech">React, Tailwind CSS, Firebase</p>
-            <p class="project-desc">
-              Transportation management web application providing live route
-              updates and streamlined booking flows, built with a focus on
-              performance and usability.
-            </p>
-            <ul class="project-bullets">
-              <li>Performance‑focused components with lazy loading.</li>
-              <li>
-                Firebase authentication and real‑time data synchronization.
-              </li>
-            </ul>
-          </div>
-          <div class="card-corner card-corner-bottom">
-            <span class="card-rank">◆</span>
-            <span class="card-suit">♛</span>
-          </div>
-        </article>
+        <div class="timeline-item timeline-left">
+          <div class="timeline-node node-epic"></div>
+          <article class="project-card project-epic">
+            <div class="card-corner card-corner-top">
+              <span class="card-rank">◆</span>
+              <span class="card-suit">♛</span>
+            </div>
+            <div class="card-center project-center">
+              <div class="project-badge">EPIC</div>
+              <h3 class="project-title">Smart Transit Portal</h3>
+              <p class="project-tech">React, Tailwind CSS, Firebase</p>
+              <p class="project-desc">
+                Transportation management web application providing live route
+                updates and streamlined booking flows, built with a focus on
+                performance and usability.
+              </p>
+              <ul class="project-bullets">
+                <li>Performance‑focused components with lazy loading.</li>
+                <li>
+                  Firebase authentication and real‑time data synchronization.
+                </li>
+              </ul>
+            </div>
+            <div class="card-corner card-corner-bottom">
+              <span class="card-rank">◆</span>
+              <span class="card-suit">♛</span>
+            </div>
+          </article>
+        </div>
 
         <!-- AI Powered Chatbot -->
-        <article class="project-card project-rare">
-          <div class="card-corner card-corner-top">
-            <span class="card-rank">♠</span>
-            <span class="card-suit">♞</span>
-          </div>
-          <div class="card-center project-center">
-            <div class="project-badge">RARE</div>
-            <h3 class="project-title">AI‑Powered Chatbot</h3>
-            <p class="project-tech">
-              React, Node.js, Tailwind CSS, OpenAI APIs
-            </p>
-            <p class="project-desc">
-              Implemented a conversational assistant integrating OpenAI APIs to
-              provide context‑aware responses within a custom, accessible UI.
-            </p>
-            <ul class="project-bullets">
-              <li>
-                Streaming responses and prompt engineering for reliable outputs.
-              </li>
-              <li>
-                Accessible chat interface optimized for clarity and usability.
-              </li>
-            </ul>
-          </div>
-          <div class="card-corner card-corner-bottom">
-            <span class="card-rank">♠</span>
-            <span class="card-suit">♞</span>
-          </div>
-        </article>
+        <div class="timeline-item timeline-right">
+          <div class="timeline-node node-rare"></div>
+          <article class="project-card project-rare">
+            <div class="card-corner card-corner-top">
+              <span class="card-rank">♠</span>
+              <span class="card-suit">♞</span>
+            </div>
+            <div class="card-center project-center">
+              <div class="project-badge">RARE</div>
+              <h3 class="project-title">AI‑Powered Chatbot</h3>
+              <p class="project-tech">
+                React, Node.js, Tailwind CSS, OpenAI APIs
+              </p>
+              <p class="project-desc">
+                Implemented a conversational assistant integrating OpenAI APIs to
+                provide context‑aware responses within a custom, accessible UI.
+              </p>
+              <ul class="project-bullets">
+                <li>
+                  Streaming responses and prompt engineering for reliable outputs.
+                </li>
+                <li>
+                  Accessible chat interface optimized for clarity and usability.
+                </li>
+              </ul>
+            </div>
+            <div class="card-corner card-corner-bottom">
+              <span class="card-rank">♠</span>
+              <span class="card-suit">♞</span>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- Experience -->
+    <!-- Education -->
     <section id="experience" class="section section-experience">
-      <h2 class="section-title">
-        Education
-        <!--  -->
-      </h2>
+      <h2 class="section-title">Quest Log</h2>
+      <p class="section-subtitle">Levels completed on the education path.</p>
 
-      <div class="cards-wrapper">
-        <div class="card">
-          <div class="tools">
-            <span class="box red"></span>
-            <span class="box yellow"></span>
-            <span class="box green"></span>
-          </div>
-          <div class="card__content">
+      <div class="edu-timeline">
+        <div class="edu-item">
+          <div class="edu-node edu-node-legendary"></div>
+          <div class="edu-card edu-legendary">
+            <div class="edu-level">LVL 3</div>
             <h3>B.Tech in Computer Science Engineering</h3>
-            <div class="duration">2021 – 2025</div>
-            <p>Chitkara University<br />CGPA: 9.1 / 10</p>
+            <div class="edu-meta">
+              <span class="edu-duration">2021 – 2025</span>
+              <span class="edu-place">Chitkara University</span>
+            </div>
+            <div class="edu-score">
+              <span class="edu-score-label">CGPA</span>
+              <div class="edu-xp-bar"><span style="width: 91%"></span></div>
+              <span class="edu-score-value">9.1 / 10</span>
+            </div>
           </div>
         </div>
 
-        <div class="card">
-          <div class="tools">
-            <span class="box red"></span>
-            <span class="box yellow"></span>
-            <span class="box green"></span>
-          </div>
-          <div class="card__content">
+        <div class="edu-item">
+          <div class="edu-node edu-node-rare"></div>
+          <div class="edu-card edu-rare">
+            <div class="edu-level">LVL 2</div>
             <h3>Senior Secondary (CBSE)</h3>
-            <div class="duration">2020 – 2021</div>
-            <p>Dayanand Model Sr. Sec. School<br />Score: 74%</p>
+            <div class="edu-meta">
+              <span class="edu-duration">2020 – 2021</span>
+              <span class="edu-place">Dayanand Model Sr. Sec. School</span>
+            </div>
+            <div class="edu-score">
+              <span class="edu-score-label">Score</span>
+              <div class="edu-xp-bar"><span style="width: 74%"></span></div>
+              <span class="edu-score-value">74%</span>
+            </div>
           </div>
         </div>
 
-        <div class="card">
-          <div class="tools">
-            <span class="box red"></span>
-            <span class="box yellow"></span>
-            <span class="box green"></span>
-          </div>
-          <div class="card__content">
+        <div class="edu-item">
+          <div class="edu-node edu-node-common"></div>
+          <div class="edu-card edu-common">
+            <div class="edu-level">LVL 1</div>
             <h3>Secondary (CBSE)</h3>
-            <div class="duration">2018 – 2019</div>
-            <p>Dayanand Model Sr. Sec. School<br />Score: 85%</p>
+            <div class="edu-meta">
+              <span class="edu-duration">2018 – 2019</span>
+              <span class="edu-place">Dayanand Model Sr. Sec. School</span>
+            </div>
+            <div class="edu-score">
+              <span class="edu-score-label">Score</span>
+              <div class="edu-xp-bar"><span style="width: 85%"></span></div>
+              <span class="edu-score-value">85%</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- ````````````````````````````````````````````````` -->
 
     <!-- Achievements -->
     <section id="achievements" class="section section-achievements">
       <h2 class="section-title">Achievements Unlocked</h2>
-      <p class="section-subtitle">Badges I’ve earned along the way.</p>
+      <p class="section-subtitle">Badges I've earned along the way.</p>
 
       <div class="cards-wrapper achievement-cards">
         <div class="card">
@@ -434,7 +457,7 @@
             <h3>Hackathon Champion</h3>
             <p>
               First place in a hackathon for building a production‑ready video
-              conferencing platform.[file:6]
+              conferencing platform.
             </p>
             <div class="xp-bar"><span style="width: 90%"></span></div>
             <p class="xp-text">+600 XP</p>
@@ -452,7 +475,7 @@
             <h3>Analytics Certified</h3>
             <p>
               Completed Google Analytics certification to better understand
-              product metrics and user behavior.[file:6]
+              product metrics and user behavior.
             </p>
             <div class="xp-bar"><span style="width: 70%"></span></div>
             <p class="xp-text">+400 XP</p>
@@ -470,7 +493,7 @@
             <h3>Code Warrior</h3>
             <p>
               Hands‑on experience across Java, C++, JavaScript, and Python in
-              academic and personal projects.[file:6]
+              academic and personal projects.
             </p>
             <div class="xp-bar"><span style="width: 80%"></span></div>
             <p class="xp-text">+500 XP</p>
@@ -488,7 +511,7 @@
             <h3>Cloud Navigator</h3>
             <p>
               Deployed containerized services on AWS using Docker and CI/CD
-              pipelines.[file:6]
+              pipelines.
             </p>
             <div class="xp-bar"><span style="width: 85%"></span></div>
             <p class="xp-text">+550 XP</p>
@@ -499,43 +522,43 @@
 
     <!-- Contact -->
     <section id="contact" class="section section-contact">
-      <h2 class="section-title">Let’s Work Together</h2>
+      <h2 class="section-title">// SEND_TRANSMISSION</h2>
       <p class="section-subtitle">
         Open to internships, full-time roles, and impactful projects.
       </p>
 
-      <div class="contact-grid">
-        <!-- Contact Info -->
-        <div class="contact-card">
-          <h3>Contact Information</h3>
-          <ul>
-            <li>
-              <strong>Phone:</strong>
-              <a href="tel:+919877864543">+91 98778 64543</a>
-            </li>
-            <li>
-              <strong>Email:</strong>
-              <a href="mailto:prathamarora925@gmail.com">
-                prathamarora925@gmail.com
-              </a>
-            </li>
-            <li>
-              <strong>LinkedIn:</strong>
-              <a href="#" target="_blank" rel="noopener"> View Profile </a>
-            </li>
-            <li>
-              <strong>GitHub:</strong>
-              <a href="#" target="_blank" rel="noopener"> View Repositories </a>
-            </li>
-          </ul>
+      <div class="contact-links-row">
+        <a href="tel:+919877864543" class="contact-link-btn">
+          <span class="contact-link-icon">☎</span>
+          <span class="contact-link-label">Phone</span>
+        </a>
+        <a href="mailto:prathamarora925@gmail.com" class="contact-link-btn">
+          <span class="contact-link-icon">✉</span>
+          <span class="contact-link-label">Email</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="contact-link-btn">
+          <span class="contact-link-icon">⬡</span>
+          <span class="contact-link-label">LinkedIn</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="contact-link-btn">
+          <span class="contact-link-icon">◈</span>
+          <span class="contact-link-label">GitHub</span>
+        </a>
+      </div>
+
+      <div class="contact-terminal">
+        <div class="terminal-bar">
+          <span class="box red"></span>
+          <span class="box yellow"></span>
+          <span class="box green"></span>
+          <span class="terminal-title">transmission.sh</span>
         </div>
-
-        <!-- Contact Form -->
-        <form class="contact-form" onsubmit="return false;">
-          <h3>Send a Message</h3>
-
+        <form class="contact-form" id="contactForm" onsubmit="return false;">
+          <div class="terminal-line">
+            <span class="terminal-prompt">&gt;</span>
+            <span class="terminal-label">ENTER_NAME:</span>
+          </div>
           <div class="form-group">
-            <label for="contactName">Full Name</label>
             <input
               type="text"
               id="contactName"
@@ -544,8 +567,11 @@
             />
           </div>
 
+          <div class="terminal-line">
+            <span class="terminal-prompt">&gt;</span>
+            <span class="terminal-label">ENTER_EMAIL:</span>
+          </div>
           <div class="form-group">
-            <label for="contactEmail">Email Address</label>
             <input
               type="email"
               id="contactEmail"
@@ -554,8 +580,11 @@
             />
           </div>
 
+          <div class="terminal-line">
+            <span class="terminal-prompt">&gt;</span>
+            <span class="terminal-label">ENTER_MESSAGE:</span>
+          </div>
           <div class="form-group">
-            <label for="contactMessage">Message</label>
             <textarea
               id="contactMessage"
               rows="4"
@@ -564,20 +593,19 @@
             ></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary">Send Message</button>
+          <button type="submit" class="btn btn-primary btn-arcade" id="contactSubmit">
+            ▶ TRANSMIT
+          </button>
 
           <p class="form-status" id="formStatus"></p>
         </form>
       </div>
     </section>
 
-    <!-- `````````````````````````````````````````````````````` -->
-
     <!-- Footer -->
     <footer class="footer">
       <p>© Pratham Arora.</p>
     </footer>
-    <!-- `````````````````````````````````` -->
 
     <script src="script.js"></script>
   </body>
