@@ -1504,7 +1504,7 @@ span {
 
 .achievement-rarity {
     display: inline-block;
-    font-size: 11px;
+    font-size: 10px;
     padding: 3px 8px;
     border-radius: 999px;
     letter-spacing: 0.12em;
@@ -1551,6 +1551,39 @@ span {
     margin-bottom: 0;
 }
 
+/* ```````````````````````````````````````````````````` */
+
+
+/* LEGENDARY (same as .epic from achievements) */
+.achievement-rarity.legendary {
+    background: rgba(255, 75, 218, 0.12);
+    color: var(--epic);
+    /* #ff4bda */
+}
+
+/* EPIC (same as .rare from achievements) */
+.achievement-rarity.epic {
+    background: rgba(75, 179, 255, 0.12);
+    color: var(--rare);
+    /* #4bb3ff */
+}
+
+/* RARE (same as .common from achievements) */
+.achievement-rarity.rare {
+    background: rgba(156, 163, 175, 0.12);
+    color: var(--common);
+    /* #9ca3af */
+}
+
+/* Projects specific: position the badge like in achievements */
+.section-projects .card__content .achievement-rarity {
+    margin-bottom: 10px;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
 
 /* ═══════════════════════════════════════════════
    CONTACT — Terminal Theme
