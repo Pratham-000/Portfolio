@@ -47,6 +47,32 @@ html {
     z-index: -1;
 }
 
+/* Hero GIF background (replaces pixel canvas visually) */
+.section-intro {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Full-bleed GIF behind the content */
+.intro-bg-gif {
+    position: absolute;
+    inset: 0;
+    background-image: url("https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmduYmNtdjlvdDhkNWJvYTExaGdxNXVpdXh0YWtxbnZkamo2dTV2ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Basrh159dGwKY/giphy.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.22;
+    /* tweak for readability */
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ensure hero content stays above GIF */
+.intro-content {
+    position: relative;
+    z-index: 1;
+}
+
 /* ═══════════════════════════════════════════════
    NAVBAR — Enhanced
    ═══════════════════════════════════════════════ */
@@ -712,8 +738,69 @@ span {
 
 /* ═══════════════════════════════════════════════
    PROJECTS — Vertical Timeline
-   ═══════════════════════════════════════════════ */
-.section-projects {
+   ═══════════════════════════════════════════════ 
+*/
+
+/* Projects as cards – same grid as achievements/education */
+.section-projects .cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Let projects share the same base card look */
+.section-projects .card {
+    background: #181a20;
+}
+
+/* Minimalist text style like education */
+.section-projects .card__content h3 {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 8px;
+}
+
+.section-projects .card__content .duration {
+    font-size: 13px;
+    color: #9ca3af;
+    margin-bottom: 10px;
+}
+
+.section-projects .card__content p {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 14px;
+    color: #d1d5db;
+    line-height: 1.6;
+}
+
+/* Small label at the top (LEGENDARY / EPIC / etc.) */
+.project-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 6px;
+}
+
+/* Bullet list inside card */
+.project-points {
+    margin: 10px 0 0;
+    padding-left: 18px;
+    list-style: disc;
+}
+
+.project-points li {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 4px;
+}
+
+
+
+/* ```````````````````````````````````````````````````````` */
+/* .section-projects {
     font-family: 'Courier New', Courier, monospace;
     font-weight: 100;
     text-align: center;
@@ -727,7 +814,7 @@ span {
 }
 
 /* Center glowing line */
-.project-timeline::before {
+/* .project-timeline::before {
     content: '';
     position: absolute;
     top: 0;
@@ -757,22 +844,22 @@ span {
 
 .timeline-item:last-child {
     margin-bottom: 0;
-}
+} */
 
 /* Left items: card on left, empty on right */
-.timeline-item.timeline-left {
+/* .timeline-item.timeline-left {
     justify-content: flex-start;
     padding-right: calc(50% + 30px);
-}
+} */
 
 /* Right items: empty on left, card on right */
-.timeline-item.timeline-right {
+/* .timeline-item.timeline-right {
     justify-content: flex-end;
     padding-left: calc(50% + 30px);
-}
+} */
 
 /* Timeline node dot */
-.timeline-node {
+/* .timeline-node {
     position: absolute;
     left: 50%;
     top: 30px;
@@ -817,10 +904,11 @@ span {
 @keyframes pulse-rare {
     0%, 100% { box-shadow: 0 0 12px rgba(75, 179, 255, 0.5), 0 0 25px rgba(75, 179, 255, 0.2); }
     50% { box-shadow: 0 0 20px rgba(75, 179, 255, 0.8), 0 0 40px rgba(75, 179, 255, 0.3); }
-}
+} */
 
 /* Project cards within timeline */
-.project-timeline .project-card {
+
+/*.project-timeline .project-card {
     position: relative;
     padding: 32px 18px 32px;
     border-radius: 12px;
@@ -895,10 +983,10 @@ span {
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-bottom: 12px;
-}
+} */
 
 /* LEGENDARY project */
-.project-card.project-legendary {
+/*.project-card.project-legendary {
     border-color: var(--legendary);
     background:
         radial-gradient(circle at top, rgba(255, 200, 87, 0.12), transparent 60%),
@@ -928,7 +1016,7 @@ span {
 }
 
 /* EPIC project */
-.project-card.project-epic {
+/* .project-card.project-epic {
     border-color: var(--epic);
     background:
         radial-gradient(circle at top, rgba(255, 75, 218, 0.12), transparent 60%),
@@ -955,10 +1043,10 @@ span {
 
 .project-epic::after {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect x='5' y='0' width='2' height='1' fill='%23ff4bda'/%3E%3Crect x='9' y='0' width='2' height='1' fill='%23ff4bda'/%3E%3Crect x='4' y='1' width='8' height='1' fill='%23ff4bda'/%3E%3Crect x='5' y='2' width='6' height='1' fill='%23ff4bda'/%3E%3Crect x='5' y='3' width='6' height='1' fill='%23ff4bda'/%3E%3Crect x='5' y='4' width='6' height='2' fill='%23ff4bda'/%3E%3Crect x='6' y='6' width='4' height='1' fill='%23ff4bda'/%3E%3Crect x='4' y='7' width='8' height='1' fill='%23ff4bda'/%3E%3Crect x='5' y='8' width='6' height='2' fill='%23ff4bda'/%3E%3Crect x='4' y='10' width='8' height='1' fill='%23ff4bda'/%3E%3Crect x='3' y='11' width='10' height='1' fill='%23ff4bda'/%3E%3Crect x='2' y='12' width='12' height='1' fill='%23ff4bda'/%3E%3Crect x='2' y='13' width='12' height='2' fill='%23ff4bda'/%3E%3Crect x='1' y='15' width='14' height='1' fill='%23ff4bda'/%3E%3C/svg%3E");
-}
+}  */
 
 /* RARE project */
-.project-card.project-rare {
+/*.project-card.project-rare {
     border-color: var(--rare);
     background:
         radial-gradient(circle at top, rgba(75, 179, 255, 0.12), transparent 60%),
@@ -1021,13 +1109,13 @@ span {
     font-size: 13px;
     color: var(--muted);
     line-height: 1.5;
-}
+} */
 
 
 /* ═══════════════════════════════════════════════
    EDUCATION — Unified with Intro Theme
    ═══════════════════════════════════════════════ */
-.section-experience {
+/* .section-experience {
     padding: 80px 8vw;
     background: radial-gradient(circle at top left, #181827 0, transparent 55%), var(--bg) !important;
 }
@@ -1117,7 +1205,7 @@ span {
 }
 
 /* Pixel grid overlay on edu cards */
-.edu-card::before {
+/*.edu-card::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -1287,8 +1375,42 @@ span {
     min-width: 70px;
     text-align: right;
     letter-spacing: normal;
+} */
+
+.section-experience {
+    padding: 80px 8vw;
+    background: radial-gradient(circle at top left, #181827 0, transparent 55%), var(--bg) !important;
 }
 
+.section-experience .section-title {
+    font-family: "Press Start 2P", system-ui;
+}
+
+.section-experience .section-subtitle {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 16px;
+    color: var(--muted);
+}
+
+/* Grid layout for education cards (same as achievements, but you can tweak) */
+.section-experience .cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+@media (max-width: 960px) {
+    .section-experience .cards-wrapper {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .section-experience .cards-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* ═══════════════════════════════════════════════
    ACHIEVEMENTS

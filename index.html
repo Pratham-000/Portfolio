@@ -39,7 +39,9 @@
 
     <!-- Intro / Hero -->
     <section id="intro" class="section section-intro">
-      <canvas id="pixelBg"></canvas>
+      <!-- GIF background layer -->
+      <div class="intro-bg-gif"></div>
+
       <div class="intro-content">
         <p class="eyebrow">WELCOME PLAYER ONE</p>
         <h1 class="intro-title">Hi, I'm <span>Pratham Arora</span></h1>
@@ -252,131 +254,98 @@
         A snapshot of the worlds I've built recently.
       </p>
 
-      <div class="project-timeline">
+      <div class="cards-wrapper project-cards">
         <!-- Secure API Gateway -->
-        <div class="timeline-item timeline-left">
-          <div class="timeline-node node-legendary"></div>
-          <article class="project-card project-legendary">
-            <div class="card-corner card-corner-top">
-              <span class="card-rank">★</span>
-              <span class="card-suit">♔</span>
-            </div>
-            <div class="card-center project-center">
-              <div class="project-badge">LEGENDARY</div>
-              <h3 class="project-title">Secure API Gateway</h3>
-              <p class="project-tech">
-                C++, Node.js, MongoDB, JWT, PostgreSQL, Linux
-              </p>
-              <p class="project-desc">
-                Designed and implemented a secure API gateway with JWT
-                authentication, connection pooling, and optimized query handling
-                to improve throughput and lower latency.
-              </p>
-              <ul class="project-bullets">
-                <li>Centralized logging and monitoring on Linux servers.</li>
-                <li>
-                  Resilient architecture with production-grade observability.
-                </li>
-              </ul>
-            </div>
-            <div class="card-corner card-corner-bottom">
-              <span class="card-rank">★</span>
-              <span class="card-suit">♔</span>
-            </div>
-          </article>
+        <div class="card project-card">
+          <div class="tools">
+            <span class="box red"></span>
+            <span class="box yellow"></span>
+            <span class="box green"></span>
+          </div>
+          <div class="card__content">
+            <p class="project-label">LEGENDARY • Backend</p>
+            <h3>Secure API Gateway</h3>
+            <p class="duration">
+              C++, Node.js, MongoDB, JWT, PostgreSQL, Linux
+            </p>
+            <p>
+              Designed and implemented a secure API gateway with JWT
+              authentication, connection pooling, and optimized query handling
+              to improve throughput and reduce latency.
+            </p>
+            <ul class="project-points">
+              <li>Centralized logging and monitoring on Linux servers.</li>
+              <li>
+                Production-grade observability and resilient architecture.
+              </li>
+            </ul>
+          </div>
         </div>
 
         <!-- Blogify Platform -->
-        <div class="timeline-item timeline-right">
-          <div class="timeline-node node-epic"></div>
-          <article class="project-card project-epic">
-            <div class="card-corner card-corner-top">
-              <span class="card-rank">◆</span>
-              <span class="card-suit">♛</span>
-            </div>
-            <div class="card-center project-center">
-              <div class="project-badge">EPIC</div>
-              <h3 class="project-title">Blogify Platform</h3>
-              <p class="project-tech">React, Node.js, Express, MongoDB, JWT</p>
-              <p class="project-desc">
-                Full‑stack blogging platform with role‑based access control and
-                secure, documented APIs for content and user management.
-              </p>
-              <ul class="project-bullets">
-                <li>JWT authentication and protected routes.</li>
-                <li>Well‑documented REST APIs for posts, comments, and users.</li>
-              </ul>
-            </div>
-            <div class="card-corner card-corner-bottom">
-              <span class="card-rank">◆</span>
-              <span class="card-suit">♛</span>
-            </div>
-          </article>
+        <div class="card project-card">
+          <div class="tools">
+            <span class="box red"></span>
+            <span class="box yellow"></span>
+            <span class="box green"></span>
+          </div>
+          <div class="card__content">
+            <p class="project-label">EPIC • Full‑stack</p>
+            <h3>Blogify Platform</h3>
+            <p class="duration">React, Node.js, Express, MongoDB, JWT</p>
+            <p>
+              Full‑stack blogging platform with role‑based access control and
+              secure, documented APIs for content and user management.
+            </p>
+            <ul class="project-points">
+              <li>JWT authentication and protected routes.</li>
+              <li>REST APIs for posts, comments, and users.</li>
+            </ul>
+          </div>
         </div>
 
         <!-- Smart Transit Portal -->
-        <div class="timeline-item timeline-left">
-          <div class="timeline-node node-epic"></div>
-          <article class="project-card project-epic">
-            <div class="card-corner card-corner-top">
-              <span class="card-rank">◆</span>
-              <span class="card-suit">♛</span>
-            </div>
-            <div class="card-center project-center">
-              <div class="project-badge">EPIC</div>
-              <h3 class="project-title">Smart Transit Portal</h3>
-              <p class="project-tech">React, Tailwind CSS, Firebase</p>
-              <p class="project-desc">
-                Transportation management web application providing live route
-                updates and streamlined booking flows, built with a focus on
-                performance and usability.
-              </p>
-              <ul class="project-bullets">
-                <li>Performance‑focused components with lazy loading.</li>
-                <li>
-                  Firebase authentication and real‑time data synchronization.
-                </li>
-              </ul>
-            </div>
-            <div class="card-corner card-corner-bottom">
-              <span class="card-rank">◆</span>
-              <span class="card-suit">♛</span>
-            </div>
-          </article>
+        <div class="card project-card">
+          <div class="tools">
+            <span class="box red"></span>
+            <span class="box yellow"></span>
+            <span class="box green"></span>
+          </div>
+          <div class="card__content">
+            <p class="project-label">EPIC • Frontend</p>
+            <h3>Smart Transit Portal</h3>
+            <p class="duration">React, Tailwind CSS, Firebase</p>
+            <p>
+              Transportation management web app providing live route updates and
+              streamlined booking with a focus on performance and usability.
+            </p>
+            <ul class="project-points">
+              <li>Performance‑focused components with lazy loading.</li>
+              <li>Firebase auth and real‑time data sync.</li>
+            </ul>
+          </div>
         </div>
 
-        <!-- AI Powered Chatbot -->
-        <div class="timeline-item timeline-right">
-          <div class="timeline-node node-rare"></div>
-          <article class="project-card project-rare">
-            <div class="card-corner card-corner-top">
-              <span class="card-rank">♠</span>
-              <span class="card-suit">♞</span>
-            </div>
-            <div class="card-center project-center">
-              <div class="project-badge">RARE</div>
-              <h3 class="project-title">AI‑Powered Chatbot</h3>
-              <p class="project-tech">
-                React, Node.js, Tailwind CSS, OpenAI APIs
-              </p>
-              <p class="project-desc">
-                Implemented a conversational assistant integrating OpenAI APIs to
-                provide context‑aware responses within a custom, accessible UI.
-              </p>
-              <ul class="project-bullets">
-                <li>
-                  Streaming responses and prompt engineering for reliable outputs.
-                </li>
-                <li>
-                  Accessible chat interface optimized for clarity and usability.
-                </li>
-              </ul>
-            </div>
-            <div class="card-corner card-corner-bottom">
-              <span class="card-rank">♠</span>
-              <span class="card-suit">♞</span>
-            </div>
-          </article>
+        <!-- AI‑Powered Chatbot -->
+        <div class="card project-card">
+          <div class="tools">
+            <span class="box red"></span>
+            <span class="box yellow"></span>
+            <span class="box green"></span>
+          </div>
+          <div class="card__content">
+            <p class="project-label">RARE • AI</p>
+            <h3>AI‑Powered Chatbot</h3>
+            <p class="duration">React, Node.js, Tailwind CSS, OpenAI APIs</p>
+            <p>
+              Conversational assistant integrating OpenAI APIs to provide
+              context‑aware responses in a custom, accessible UI.
+            </p>
+            <ul class="project-points">
+              <li>Streaming responses and prompt engineering.</li>
+              <li>Accessible chat interface optimized for clarity.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -386,55 +355,64 @@
       <h2 class="section-title">Quest Log</h2>
       <p class="section-subtitle">Levels completed on the education path.</p>
 
-      <div class="edu-timeline">
-        <div class="edu-item">
-          <div class="edu-node edu-node-legendary"></div>
-          <div class="edu-card edu-legendary">
-            <div class="edu-level">LVL 3</div>
+      <div class="cards-wrapper edu-cards">
+        <!-- B.Tech -->
+        <div class="card edu-card edu-legendary">
+          <div class="tools">
+            <span class="box red"></span>
+            <span class="box yellow"></span>
+            <span class="box green"></span>
+          </div>
+          <div class="card__content">
+            <div class="achievement-rarity epic">LVL 3</div>
             <h3>B.Tech in Computer Science Engineering</h3>
-            <div class="edu-meta">
-              <span class="edu-duration">2021 – 2025</span>
-              <span class="edu-place">Chitkara University</span>
-            </div>
-            <div class="edu-score">
-              <span class="edu-score-label">CGPA</span>
-              <div class="edu-xp-bar"><span style="width: 91%"></span></div>
-              <span class="edu-score-value">9.1 / 10</span>
-            </div>
+            <p class="duration">2021 – 2025 · Chitkara University</p>
+            <p>
+              Focused on software engineering, backend systems and full‑stack
+              projects with strong academic performance.
+            </p>
+            <div class="xp-bar"><span style="width: 91%"></span></div>
+            <p class="xp-text">CGPA: 9.1 / 10</p>
           </div>
         </div>
 
-        <div class="edu-item">
-          <div class="edu-node edu-node-rare"></div>
-          <div class="edu-card edu-rare">
-            <div class="edu-level">LVL 2</div>
+        <!-- Senior Secondary -->
+        <div class="card edu-card edu-rare">
+          <div class="tools">
+            <span class="box red"></span>
+            <span class="box yellow"></span>
+            <span class="box green"></span>
+          </div>
+          <div class="card__content">
+            <div class="achievement-rarity rare">LVL 2</div>
             <h3>Senior Secondary (CBSE)</h3>
-            <div class="edu-meta">
-              <span class="edu-duration">2020 – 2021</span>
-              <span class="edu-place">Dayanand Model Sr. Sec. School</span>
-            </div>
-            <div class="edu-score">
-              <span class="edu-score-label">Score</span>
-              <div class="edu-xp-bar"><span style="width: 74%"></span></div>
-              <span class="edu-score-value">74%</span>
-            </div>
+            <p class="duration">2020 – 2021 · Dayanand Model Sr. Sec. School</p>
+            <p>
+              Completed senior secondary education with emphasis on science and
+              mathematics.
+            </p>
+            <div class="xp-bar"><span style="width: 74%"></span></div>
+            <p class="xp-text">Score: 74%</p>
           </div>
         </div>
 
-        <div class="edu-item">
-          <div class="edu-node edu-node-common"></div>
-          <div class="edu-card edu-common">
-            <div class="edu-level">LVL 1</div>
+        <!-- Secondary -->
+        <div class="card edu-card edu-common">
+          <div class="tools">
+            <span class="box red"></span>
+            <span class="box yellow"></span>
+            <span class="box green"></span>
+          </div>
+          <div class="card__content">
+            <div class="achievement-rarity common">LVL 1</div>
             <h3>Secondary (CBSE)</h3>
-            <div class="edu-meta">
-              <span class="edu-duration">2018 – 2019</span>
-              <span class="edu-place">Dayanand Model Sr. Sec. School</span>
-            </div>
-            <div class="edu-score">
-              <span class="edu-score-label">Score</span>
-              <div class="edu-xp-bar"><span style="width: 85%"></span></div>
-              <span class="edu-score-value">85%</span>
-            </div>
+            <p class="duration">2018 – 2019 · Dayanand Model Sr. Sec. School</p>
+            <p>
+              Built a solid foundation in core subjects and problem‑solving
+              skills.
+            </p>
+            <div class="xp-bar"><span style="width: 85%"></span></div>
+            <p class="xp-text">Score: 85%</p>
           </div>
         </div>
       </div>
@@ -593,7 +571,11 @@
             ></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-arcade" id="contactSubmit">
+          <button
+            type="submit"
+            class="btn btn-primary btn-arcade"
+            id="contactSubmit"
+          >
             ▶ TRANSMIT
           </button>
 
