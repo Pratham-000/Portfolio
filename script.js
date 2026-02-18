@@ -150,16 +150,17 @@
 
   btn.addEventListener("click", function () {
     btn.classList.toggle("open");
-    navLinks.classList.toggle("open");
+    navLinks.classList.toggle("active"); // FIXED
   });
 
   navLinks.querySelectorAll("a").forEach(function (link) {
     link.addEventListener("click", function () {
       btn.classList.remove("open");
-      navLinks.classList.remove("open");
+      navLinks.classList.remove("active"); // FIXED
     });
   });
 })();
+
 
 
 // ═══════════════════════════════════════════════
