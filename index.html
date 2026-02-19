@@ -17,34 +17,62 @@
     />
   </head>
   <body>
-    <div class="bg-overlay"></div>
-
-    <!-- Top Nav -->
+    <!-- ═══ NAVBAR — pixel block style matching reference ═══ -->
     <header class="top-nav" id="topNav">
-      <div class="logo">PRATHAM.dev</div>
-      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="nav-links" id="navLinks">
-        <a href="#intro" data-section="intro">Intro</a>
-        <a href="#skills" data-section="skills">Skills</a>
-        <a href="#projects" data-section="projects">Projects</a>
-        <a href="#experience" data-section="experience">Education</a>
-        <a href="#achievements" data-section="achievements">Achievements</a>
-        <a href="#contact" data-section="contact">Contact</a>
+      <nav class="nav-pixel-links" id="navLinks">
+        <a href="#intro" data-section="intro" class="nav-pixel-item">
+          <span class="pixel-squares"><i></i><i></i><i></i><i></i></span>
+        </a>
+        <a
+          href="#work-experience"
+          data-section="work-experience"
+          class="nav-pixel-item"
+        >
+          <span class="pixel-squares"><i></i><i></i><i></i><i></i></span>
+        </a>
+        <a href="#skills" data-section="skills" class="nav-pixel-item active">
+          <span class="pixel-squares"><i></i><i></i><i></i><i></i></span>
+          <span class="nav-active-label">SKILLS</span>
+        </a>
+        <a href="#projects" data-section="projects" class="nav-pixel-item">
+          <span class="pixel-squares"><i></i><i></i><i></i><i></i></span>
+        </a>
+        <a href="#experience" data-section="experience" class="nav-pixel-item">
+          <span class="pixel-squares"><i></i><i></i><i></i><i></i></span>
+        </a>
+        <a
+          href="#achievements"
+          data-section="achievements"
+          class="nav-pixel-item"
+        >
+          <span class="pixel-squares"><i></i><i></i><i></i><i></i></span>
+        </a>
+        <a href="#contact" data-section="contact" class="nav-pixel-item">
+          <span class="pixel-squares"><i></i><i></i><i></i><i></i></span>
+        </a>
       </nav>
+
+      <div class="nav-right">
+        <button class="nav-dots-btn" id="navDotsBtn">
+          <span></span><span></span><span></span>
+        </button>
+        <span class="nav-plus">+</span>
+        <div class="nav-avatar">PA</div>
+      </div>
+
+      <div class="nav-dashed-line"></div>
     </header>
 
-    <!-- Intro / Hero -->
+    <!-- ═══ INTRO / HERO ═══ -->
     <section id="intro" class="section section-intro">
-      <!-- GIF background layer -->
       <div class="intro-bg-gif"></div>
+      <canvas id="pixelBg"></canvas>
 
       <div class="intro-content">
         <p class="eyebrow">WELCOME PLAYER ONE</p>
-        <h1 class="intro-title">Hi, I'm <span>Pratham Arora</span></h1>
+        <h1 class="intro-title">
+          Hi, I'm <span class="name-gradient">Pratham Arora</span>
+        </h1>
         <p class="intro-subtitle">
           Software and Backend Developer crafting scalable full‑stack
           experiences and production deployed API's with React, Node.js, and
@@ -86,194 +114,233 @@
       </div>
     </section>
 
-    <!-- Skill Deck -->
-    <section id="skills" class="section section-skills">
-      <h2 class="section-title">My Skill Deck</h2>
-      <p class="section-subtitle">
-        Cards I like to play when building products.
-      </p>
+    <!-- ═══ WORK EXPERIENCE ═══ -->
+    <section id="work-experience" class="section section-work-experience">
+      <h2 class="section-title">// WORK_EXPERIENCE</h2>
+      <p class="section-subtitle">Real-world quests completed in the field.</p>
 
-      <div class="skill-legend">
-        <span class="legend-king"
-          ><strong>KING</strong> = Consider it done</span
-        >
-        <span class="legend-queen"><strong>QUEEN</strong> = Battle‑tested</span>
-        <span class="legend-jack"><strong>JACK</strong> = Confident</span>
-        <span class="legend-joker"><strong>JOKER</strong> = Wild card</span>
-      </div>
-
-      <div class="skill-deck">
-        <!-- Kings -->
-        <div class="skill-card skill-king">
-          <div class="card-corner card-corner-top">
-            <span class="card-rank">K</span>
-            <span class="card-suit">♠</span>
+      <div class="work-timeline">
+        <div class="work-item">
+          <div class="work-accent"></div>
+          <div class="work-header">
+            <div class="work-meta">
+              <span class="work-badge">INTERNSHIP</span>
+              <span class="work-period">Oct 2025 – Feb 2026 · 5 months</span>
+            </div>
+            <div class="work-location">📍 Chandigarh, India · On-site</div>
           </div>
-          <div class="card-center">
-            <div class="skill-name">React.js</div>
-            <p class="skill-desc">
-              SPAs, hooks, performance tuning, and modern patterns.
-            </p>
+          <div class="work-body">
+            <div class="work-title-row">
+              <div>
+                <h3 class="work-role">Back End Developer</h3>
+                <p class="work-company">
+                  <span class="company-dot"></span>Delta4 Infotech
+                </p>
+              </div>
+              <div class="work-tags">
+                <span class="work-tag">Python</span>
+                <span class="work-tag">REST APIs</span>
+                <span class="work-tag">JWT/OAuth</span>
+                <span class="work-tag">MCP</span>
+              </div>
+            </div>
+            <ul class="work-points">
+              <li>
+                <span class="point-arrow">▶</span>Developed and maintained
+                backend services using Python.
+              </li>
+              <li>
+                <span class="point-arrow">▶</span>Designed and optimized RESTful
+                APIs for scalable web applications.
+              </li>
+              <li>
+                <span class="point-arrow">▶</span>Integrated databases including
+                MySQL, MongoDB, and PostgreSQL.
+              </li>
+              <li>
+                <span class="point-arrow">▶</span>Implemented authentication
+                &amp; authorization using JWT / OAuth.
+              </li>
+              <li>
+                <span class="point-arrow">▶</span>Improved API performance and
+                reduced response time by optimizing queries and integrating MCP
+                servers.
+              </li>
+              <li>
+                <span class="point-arrow">▶</span>Collaborated with frontend and
+                QA teams for feature deployment.
+              </li>
+            </ul>
+            <div class="work-skills-row">
+              <span class="skill-chip">Back-End Web Development</span>
+              <span class="skill-chip">Model Context Protocol (MCP)</span>
+              <span class="skill-chip">Database Management</span>
+              <span class="skill-chip">API Design</span>
+            </div>
           </div>
-          <div class="card-corner card-corner-bottom">
-            <span class="card-rank">K</span>
-            <span class="card-suit">♠</span>
-          </div>
-        </div>
-
-        <div class="skill-card skill-king">
-          <div class="card-corner card-corner-top">
-            <span class="card-rank">K</span>
-            <span class="card-suit">♠</span>
-          </div>
-          <div class="card-center">
-            <div class="skill-name">Node.js + Express</div>
-            <p class="skill-desc">
-              REST APIs, auth, and scalable service design.
-            </p>
-          </div>
-          <div class="card-corner card-corner-bottom">
-            <span class="card-rank">K</span>
-            <span class="card-suit">♠</span>
-          </div>
-        </div>
-
-        <!-- Queens -->
-        <div class="skill-card skill-queen">
-          <div class="card-corner card-corner-top">
-            <span class="card-rank">Q</span>
-            <span class="card-suit">♥</span>
-          </div>
-          <div class="card-center">
-            <div class="skill-name">MongoDB</div>
-            <p class="skill-desc">
-              Schema design, indexing, and query optimization.
-            </p>
-          </div>
-          <div class="card-corner card-corner-bottom">
-            <span class="card-rank">Q</span>
-            <span class="card-suit">♥</span>
-          </div>
-        </div>
-
-        <div class="skill-card skill-queen">
-          <div class="card-corner card-corner-top">
-            <span class="card-rank">Q</span>
-            <span class="card-suit">♥</span>
-          </div>
-          <div class="card-center">
-            <div class="skill-name">Tailwind CSS</div>
-            <p class="skill-desc">
-              Responsive UIs with clean utility‑first styles.
-            </p>
-          </div>
-          <div class="card-corner card-corner-bottom">
-            <span class="card-rank">Q</span>
-            <span class="card-suit">♥</span>
-          </div>
-        </div>
-
-        <!-- Jacks -->
-        <div class="skill-card skill-jack">
-          <div class="card-corner card-corner-top">
-            <span class="card-rank">J</span>
-            <span class="card-suit">♦</span>
-          </div>
-          <div class="card-center">
-            <div class="skill-name">Docker</div>
-            <p class="skill-desc">
-              Containerized services, local dev parity, deployments.
-            </p>
-          </div>
-          <div class="card-corner card-corner-bottom">
-            <span class="card-rank">J</span>
-            <span class="card-suit">♦</span>
-          </div>
-        </div>
-
-        <div class="skill-card skill-jack">
-          <div class="card-corner card-corner-top">
-            <span class="card-rank">J</span>
-            <span class="card-suit">♦</span>
-          </div>
-          <div class="card-center">
-            <div class="skill-name">AWS</div>
-            <p class="skill-desc">
-              Deploying apps, storage, and basic cloud infra.
-            </p>
-          </div>
-          <div class="card-corner card-corner-bottom">
-            <span class="card-rank">J</span>
-            <span class="card-suit">♦</span>
-          </div>
-        </div>
-
-        <!-- Jokers -->
-        <div class="skill-card skill-joker">
-          <div class="card-corner card-corner-top">
-            <span class="card-rank">★</span>
-            <span class="card-suit">✦</span>
-          </div>
-          <div class="card-center">
-            <div class="skill-name">Kubernetes</div>
-            <p class="skill-desc">
-              Learning orchestration and scalable microservices.
-            </p>
-          </div>
-          <div class="card-corner card-corner-bottom">
-            <span class="card-rank">★</span>
-            <span class="card-suit">✦</span>
-          </div>
-        </div>
-
-        <div class="skill-card skill-joker">
-          <div class="card-corner card-corner-top">
-            <span class="card-rank">★</span>
-            <span class="card-suit">✦</span>
-          </div>
-          <div class="card-center">
-            <div class="skill-name">AI / LLM APIs</div>
-            <p class="skill-desc">
-              Integrating OpenAI‑powered assistants into products.
-            </p>
-          </div>
-          <div class="card-corner card-corner-bottom">
-            <span class="card-rank">★</span>
-            <span class="card-suit">✦</span>
+          <div class="work-xp-strip">
+            <div class="work-xp-bar"><span style="width: 100%"></span></div>
+            <p class="work-xp-text">+800 XP — INTERNSHIP COMPLETE</p>
           </div>
         </div>
       </div>
-
-      <button class="btn btn-ghost" id="shuffleSkillsBtn">Shuffle Deck</button>
     </section>
 
-    <!-- Projects Timeline -->
+    <!-- ═══ SKILL DECK ═══ -->
+    <section id="skills" class="section section-skills">
+      <h2 class="section-title pixel-title">MY SKILL DECK</h2>
+
+      <div class="skill-deck">
+        <div class="skill-card skill-joker">
+          <div class="card-tl"><span class="cr">JOKER</span></div>
+          <div class="card-center">
+            <div class="card-face joker-face joker-1"></div>
+            <div class="skill-name">REACT</div>
+          </div>
+          <div class="card-br"><span class="cr">JOKER</span></div>
+        </div>
+
+        <div class="skill-card skill-joker">
+          <div class="card-tl"><span class="cr">JOKER</span></div>
+          <div class="card-center">
+            <div class="card-face joker-face joker-2"></div>
+            <div class="skill-name">NODE.JS</div>
+          </div>
+          <div class="card-br"><span class="cr">JOKER</span></div>
+        </div>
+
+        <div class="skill-card skill-king">
+          <div class="card-tl">
+            <span class="cr">K</span><span class="cs">♠</span>
+          </div>
+          <div class="card-center">
+            <div class="card-face king-face king-1"></div>
+            <div class="skill-name">PYTHON</div>
+          </div>
+          <div class="card-br">
+            <span class="cr">K</span><span class="cs">♠</span>
+          </div>
+        </div>
+
+        <div class="skill-card skill-king">
+          <div class="card-tl">
+            <span class="cr">K</span><span class="cs">♠</span>
+          </div>
+          <div class="card-center">
+            <div class="card-face king-face king-2"></div>
+            <div class="skill-name">FASTAPI</div>
+          </div>
+          <div class="card-br">
+            <span class="cr">K</span><span class="cs">♠</span>
+          </div>
+        </div>
+
+        <div class="skill-card skill-queen">
+          <div class="card-tl">
+            <span class="cr">Q</span><span class="cs">♠</span>
+          </div>
+          <div class="card-center">
+            <div class="card-face queen-face queen-1"></div>
+            <div class="skill-name">DJANGO</div>
+          </div>
+          <div class="card-br">
+            <span class="cr">Q</span><span class="cs">♠</span>
+          </div>
+        </div>
+
+        <div class="skill-card skill-jack">
+          <div class="card-tl">
+            <span class="cr">J</span><span class="cs">♦</span>
+          </div>
+          <div class="card-center">
+            <div class="card-face jack-face jack-1"></div>
+            <div class="skill-name">DOCKER</div>
+          </div>
+          <div class="card-br">
+            <span class="cr">J</span><span class="cs">♦</span>
+          </div>
+        </div>
+
+        <div class="skill-card skill-queen">
+          <div class="card-tl">
+            <span class="cr">Q</span><span class="cs">♦</span>
+          </div>
+          <div class="card-center">
+            <div class="card-face queen-face queen-2"></div>
+            <div class="skill-name">GIT</div>
+          </div>
+          <div class="card-br">
+            <span class="cr">Q</span><span class="cs">♦</span>
+          </div>
+        </div>
+
+        <div class="skill-card skill-joker">
+          <div class="card-tl"><span class="cr">JOKER</span></div>
+          <div class="card-center">
+            <div class="card-face joker-face joker-3"></div>
+            <div class="skill-name">AWS</div>
+          </div>
+          <div class="card-br"><span class="cr">JOKER</span></div>
+        </div>
+
+        <div class="skill-card skill-jack">
+          <div class="card-tl">
+            <span class="cr">J</span><span class="cs">♦</span>
+          </div>
+          <div class="card-center">
+            <div class="card-face jack-face jack-2"></div>
+            <div class="skill-name">LINUX</div>
+          </div>
+          <div class="card-br">
+            <span class="cr">J</span><span class="cs">♦</span>
+          </div>
+        </div>
+
+        <div class="skill-card skill-joker">
+          <div class="card-tl"><span class="cr">JOKER</span></div>
+          <div class="card-center">
+            <div class="card-face joker-face joker-4"></div>
+            <div class="skill-name">AI/ML</div>
+          </div>
+          <div class="card-br"><span class="cr">JOKER</span></div>
+        </div>
+      </div>
+
+      <div class="skill-shuffle-row">
+        <button class="btn-shuffle" id="shuffleSkillsBtn">
+          ★ SHUFFLE DECK
+        </button>
+      </div>
+
+      <p class="skill-legend-text">
+        KING = Consider It Done &nbsp;|&nbsp; QUEEN = I Can Do &nbsp;|&nbsp;
+        JACK = Confident &nbsp;|&nbsp; JOKER = Its My Wild Card
+      </p>
+    </section>
+
+    <!-- ═══ PROJECTS ═══ -->
     <section id="projects" class="section section-projects">
-      <h2 class="section-title">Where Did My Time Go?</h2>
+      <h2 class="section-title">WHERE DID MY TIME GO?</h2>
       <p class="section-subtitle">
         A snapshot of the worlds I've built recently.
       </p>
 
       <div class="cards-wrapper project-cards">
-        <!-- Secure API Gateway -->
         <div class="card project-card">
           <div class="tools">
-            <span class="box red"></span>
-            <span class="box yellow"></span>
-            <span class="box green"></span>
+            <span class="box red"></span><span class="box yellow"></span
+            ><span class="box green"></span>
           </div>
           <div class="card__content">
             <div class="achievement-rarity legendary">LEGENDARY</div>
             <p class="project-label">Backend</p>
-
-            <h3>Secure API Gateway</h3>
+            <h3 class="custom">Secure API Gateway</h3>
             <p class="duration">
               C++, Node.js, MongoDB, JWT, PostgreSQL, Linux
             </p>
             <p>
               Designed and implemented a secure API gateway with JWT
-              authentication, connection pooling, and optimized query handling
-              to improve throughput and reduce latency.
+              authentication, connection pooling, and optimized query handling.
             </p>
             <ul class="project-points">
               <li>Centralized logging and monitoring on Linux servers.</li>
@@ -284,21 +351,19 @@
           </div>
         </div>
 
-        <!-- Blogify Platform -->
         <div class="card project-card">
           <div class="tools">
-            <span class="box red"></span>
-            <span class="box yellow"></span>
-            <span class="box green"></span>
+            <span class="box red"></span><span class="box yellow"></span
+            ><span class="box green"></span>
           </div>
           <div class="card__content">
-            <div class="achievement-rarity epic">Epic</div>
+            <div class="achievement-rarity epic">EPIC</div>
             <p class="project-label">Full‑stack</p>
-            <h3>Blogify Platform</h3>
+            <h3 class="custom">Blogify Platform</h3>
             <p class="duration">React, Node.js, Express, MongoDB, JWT</p>
             <p>
               Full‑stack blogging platform with role‑based access control and
-              secure, documented APIs for content and user management.
+              secure, documented APIs.
             </p>
             <ul class="project-points">
               <li>JWT authentication and protected routes.</li>
@@ -307,21 +372,19 @@
           </div>
         </div>
 
-        <!-- Smart Transit Portal -->
         <div class="card project-card">
           <div class="tools">
-            <span class="box red"></span>
-            <span class="box yellow"></span>
-            <span class="box green"></span>
+            <span class="box red"></span><span class="box yellow"></span
+            ><span class="box green"></span>
           </div>
           <div class="card__content">
             <div class="achievement-rarity rare">RARE</div>
             <p class="project-label">Frontend</p>
-            <h3>Smart Transit Portal</h3>
+            <h3 class="custom">Smart Transit Portal</h3>
             <p class="duration">React, Tailwind CSS, Firebase</p>
             <p>
               Transportation management web app providing live route updates and
-              streamlined booking with a focus on performance and usability.
+              streamlined booking.
             </p>
             <ul class="project-points">
               <li>Performance‑focused components with lazy loading.</li>
@@ -330,21 +393,19 @@
           </div>
         </div>
 
-        <!-- AI‑Powered Chatbot -->
         <div class="card project-card">
           <div class="tools">
-            <span class="box red"></span>
-            <span class="box yellow"></span>
-            <span class="box green"></span>
+            <span class="box red"></span><span class="box yellow"></span
+            ><span class="box green"></span>
           </div>
           <div class="card__content">
-            <div class="achievement-rarity epic">Epic</div>
+            <div class="achievement-rarity epic">EPIC</div>
             <p class="project-label">AI</p>
-            <h3>AI‑Powered Chatbot</h3>
+            <h3 class="custom">AI‑Powered Chatbot</h3>
             <p class="duration">React, Node.js, Tailwind CSS, OpenAI APIs</p>
             <p>
-              Conversational assistant integrating OpenAI APIs to provide
-              context‑aware responses in a custom, accessible UI.
+              Conversational assistant integrating OpenAI APIs with
+              context‑aware responses.
             </p>
             <ul class="project-points">
               <li>Streaming responses and prompt engineering.</li>
@@ -355,62 +416,51 @@
       </div>
     </section>
 
-    <!-- Education -->
+    <!-- ═══ EDUCATION ═══ -->
     <section id="experience" class="section section-experience">
-      <h2 class="section-title">Quest Log</h2>
+      <h2 class="section-title">QUEST LOG</h2>
       <p class="section-subtitle">Levels completed on the education path.</p>
 
       <div class="cards-wrapper edu-cards">
-        <!-- B.Tech -->
-        <div class="card edu-card edu-legendary">
+        <div class="card edu-card">
           <div class="tools">
-            <span class="box red"></span>
-            <span class="box yellow"></span>
-            <span class="box green"></span>
+            <span class="box red"></span><span class="box yellow"></span
+            ><span class="box green"></span>
           </div>
           <div class="card__content">
             <div class="achievement-rarity epic">LVL 3</div>
-            <h3>B.Tech in Computer Science Engineering</h3>
+            <h3 class="custom">B.Tech in Computer Science Engineering</h3>
             <p class="duration">2021 – 2025 · Chitkara University</p>
             <p>
               Focused on software engineering, backend systems and full‑stack
-              projects with strong academic performance.
+              projects.
             </p>
             <div class="xp-bar"><span style="width: 91%"></span></div>
             <p class="xp-text">CGPA: 9.1 / 10</p>
           </div>
         </div>
-
-        <!-- Senior Secondary -->
-        <div class="card edu-card edu-rare">
+        <div class="card edu-card">
           <div class="tools">
-            <span class="box red"></span>
-            <span class="box yellow"></span>
-            <span class="box green"></span>
+            <span class="box red"></span><span class="box yellow"></span
+            ><span class="box green"></span>
           </div>
           <div class="card__content">
             <div class="achievement-rarity rare">LVL 2</div>
-            <h3>Senior Secondary (CBSE)</h3>
+            <h3 class="custom">Senior Secondary (CBSE)</h3>
             <p class="duration">2020 – 2021 · Dayanand Model Sr. Sec. School</p>
-            <p>
-              Completed senior secondary education with emphasis on science and
-              mathematics.
-            </p>
+            <p>Completed with emphasis on science and mathematics.</p>
             <div class="xp-bar"><span style="width: 74%"></span></div>
             <p class="xp-text">Score: 74%</p>
           </div>
         </div>
-
-        <!-- Secondary -->
-        <div class="card edu-card edu-common">
+        <div class="card edu-card">
           <div class="tools">
-            <span class="box red"></span>
-            <span class="box yellow"></span>
-            <span class="box green"></span>
+            <span class="box red"></span><span class="box yellow"></span
+            ><span class="box green"></span>
           </div>
           <div class="card__content">
             <div class="achievement-rarity common">LVL 1</div>
-            <h3>Secondary (CBSE)</h3>
+            <h3 class="custom">Secondary (CBSE)</h3>
             <p class="duration">2018 – 2019 · Dayanand Model Sr. Sec. School</p>
             <p>
               Built a solid foundation in core subjects and problem‑solving
@@ -423,75 +473,28 @@
       </div>
     </section>
 
-    <!-- Achievements -->
+    <!-- ═══ ACHIEVEMENTS ═══ -->
     <section id="achievements" class="section section-achievements">
-      <h2 class="section-title">Achievements Unlocked</h2>
+      <h2 class="section-title">ACHIEVEMENTS UNLOCKED</h2>
       <p class="section-subtitle">Badges I've earned along the way.</p>
 
-      <div class="cards-wrapper achievement-cards">
-        <div class="card">
-          <div class="tools">
-            <span class="box red"></span>
-            <span class="box yellow"></span>
-            <span class="box green"></span>
-          </div>
-          <div class="card__content">
-            <div class="achievement-rarity epic">EPIC</div>
-            <h3>Hackathon Champion</h3>
+      <div class="achv-grid">
+        <div class="achv-card">
+          <div class="achv-badge legendary">LEGENDARY</div>
+          <div class="achv-body">
+            <h3>HACKATHON CHAMPION</h3>
             <p>
-              First place in a hackathon for building a production‑ready video
-              conferencing platform.
+              First place for building a production‑ready video conferencing
+              platform.
             </p>
             <div class="xp-bar"><span style="width: 90%"></span></div>
-            <p class="xp-text">+600 XP</p>
+            <p class="xp-text">+1000 XP</p>
           </div>
         </div>
-
-        <div class="card">
-          <div class="tools">
-            <span class="box red"></span>
-            <span class="box yellow"></span>
-            <span class="box green"></span>
-          </div>
-          <div class="card__content">
-            <div class="achievement-rarity rare">RARE</div>
-            <h3>Analytics Certified</h3>
-            <p>
-              Completed Google Analytics certification to better understand
-              product metrics and user behavior.
-            </p>
-            <div class="xp-bar"><span style="width: 70%"></span></div>
-            <p class="xp-text">+400 XP</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="tools">
-            <span class="box red"></span>
-            <span class="box yellow"></span>
-            <span class="box green"></span>
-          </div>
-          <div class="card__content">
-            <div class="achievement-rarity common">COMMON</div>
-            <h3>Code Warrior</h3>
-            <p>
-              Hands‑on experience across Java, C++, JavaScript, and Python in
-              academic and personal projects.
-            </p>
-            <div class="xp-bar"><span style="width: 80%"></span></div>
-            <p class="xp-text">+500 XP</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="tools">
-            <span class="box red"></span>
-            <span class="box yellow"></span>
-            <span class="box green"></span>
-          </div>
-          <div class="card__content">
-            <div class="achievement-rarity epic">EPIC</div>
-            <h3>Cloud Navigator</h3>
+        <div class="achv-card">
+          <div class="achv-badge epic">EPIC</div>
+          <div class="achv-body">
+            <h3>CLOUD NAVIGATOR</h3>
             <p>
               Deployed containerized services on AWS using Docker and CI/CD
               pipelines.
@@ -500,71 +503,175 @@
             <p class="xp-text">+550 XP</p>
           </div>
         </div>
+        <div class="achv-card">
+          <div class="achv-badge epic">EPIC</div>
+          <div class="achv-body">
+            <h3>API ARCHITECT</h3>
+            <p>
+              Built and deployed scalable RESTful APIs serving production
+              traffic.
+            </p>
+            <div class="xp-bar"><span style="width: 88%"></span></div>
+            <p class="xp-text">+580 XP</p>
+          </div>
+        </div>
+        <div class="achv-card">
+          <div class="achv-badge rare">RARE</div>
+          <div class="achv-body">
+            <h3>SPEED CODER</h3>
+            <p>Solved 200+ coding challenges across competitive platforms.</p>
+            <div class="xp-bar"><span style="width: 72%"></span></div>
+            <p class="xp-text">+300 XP</p>
+          </div>
+        </div>
+        <div class="achv-card">
+          <div class="achv-badge common">COMMON</div>
+          <div class="achv-body">
+            <h3>CODE WARRIOR</h3>
+            <p>Hands‑on experience across Java, C++, JavaScript, and Python.</p>
+            <div class="xp-bar"><span style="width: 80%"></span></div>
+            <p class="xp-text">+500 XP</p>
+          </div>
+        </div>
+        <div class="achv-card">
+          <div class="achv-badge rare">RARE</div>
+          <div class="achv-body">
+            <h3>MCP INTEGRATOR</h3>
+            <p>
+              Integrated Model Context Protocol servers to boost API
+              performance.
+            </p>
+            <div class="xp-bar"><span style="width: 75%"></span></div>
+            <p class="xp-text">+450 XP</p>
+          </div>
+        </div>
+        <div class="achv-card">
+          <div class="achv-badge rare">RARE</div>
+          <div class="achv-body">
+            <h3>ANALYTICS CERTIFIED</h3>
+            <p>
+              Completed Google Analytics certification to understand product
+              metrics.
+            </p>
+            <div class="xp-bar"><span style="width: 70%"></span></div>
+            <p class="xp-text">+400 XP</p>
+          </div>
+        </div>
+        <div class="achv-card">
+          <div class="achv-badge epic">EPIC</div>
+          <div class="achv-body">
+            <h3>DB MASTER</h3>
+            <p>
+              Designed and optimized complex relational and NoSQL databases.
+            </p>
+            <div class="xp-bar"><span style="width: 82%"></span></div>
+            <p class="xp-text">+520 XP</p>
+          </div>
+        </div>
+        <div class="achv-card">
+          <div class="achv-badge epic">EPIC</div>
+          <div class="achv-body">
+            <h3>UI ENGINEER</h3>
+            <p>
+              Built beautiful and responsive interfaces with React and Tailwind.
+            </p>
+            <div class="xp-bar"><span style="width: 76%"></span></div>
+            <p class="xp-text">+460 XP</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Contact -->
-
-    <!-- CONNECT PORTAL -->
+    <!-- ═══ CONTACT — Cards only, no form ═══ -->
     <section id="contact" class="section section-contact">
-      <h2 class="section-title">// SEND_TRANSMISSION</h2>
-      <p class="section-subtitle">
-        Open to internships, full-time roles, and impactful projects.
-      </p>
-      <div class="connect-wrapper">
-        <!-- GitHub -->
-        <a
-          href="https://github.com/YOUR_USERNAME"
-          target="_blank"
-          class="connect-card github-card"
-        >
-          <div class="card-bar">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-          </div>
-          <div class="card-overlay"></div>
-          <h3>GITHUB</h3>
-          <p>Explore my codebase & open source quests.</p>
-        </a>
+      <div class="contact-bg-gif"></div>
+      <div class="contact-overlay"></div>
+      <div class="contact-grid"></div>
 
-        <!-- LinkedIn -->
-        <a
-          href="https://linkedin.com/in/YOUR_USERNAME"
-          target="_blank"
-          class="connect-card linkedin-card"
-        >
-          <div class="card-bar">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-          </div>
-          <div class="card-overlay"></div>
-          <h3>LINKEDIN</h3>
-          <p>Professional journey & experience logs.</p>
-        </a>
+      <div class="contact-inner">
+        <h2 class="section-title contact-title">// CONNECT</h2>
+        <p class="section-subtitle contact-sub">
+          Open to internships, full-time roles, and impactful projects.
+        </p>
 
-        <!-- LeetCode -->
-        <a
-          href="https://leetcode.com/YOUR_USERNAME"
-          target="_blank"
-          class="connect-card leetcode-card"
-        >
-          <div class="card-bar">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-          </div>
-          <div class="card-overlay"></div>
-          <h3>LEETCODE</h3>
-          <p>DSA battles & algorithmic achievements.</p>
-        </a>
+        <div class="connect-wrapper">
+          <a
+            href="https://github.com/YOUR_USERNAME"
+            target="_blank"
+            class="connect-card github-card"
+          >
+            <div class="card-bar">
+              <span class="dot red"></span><span class="dot yellow"></span
+              ><span class="dot green"></span>
+              <span class="card-bar-label">github.exe</span>
+            </div>
+            <div class="connect-card-body">
+              <div class="connect-icon">{ }</div>
+              <h3>GITHUB</h3>
+              <p>Explore my codebase &amp; open source quests.</p>
+            </div>
+          </a>
+
+          <a
+            href="https://linkedin.com/in/pratham-arora-ab3602213"
+            target="_blank"
+            class="connect-card linkedin-card"
+          >
+            <div class="card-bar">
+              <span class="dot red"></span><span class="dot yellow"></span
+              ><span class="dot green"></span>
+              <span class="card-bar-label">linkedin.exe</span>
+            </div>
+            <div class="connect-card-body">
+              <div class="connect-icon">in</div>
+              <h3>LINKEDIN</h3>
+              <p>Professional journey &amp; experience logs.</p>
+            </div>
+          </a>
+
+          <a
+            href="https://leetcode.com/YOUR_USERNAME"
+            target="_blank"
+            class="connect-card leetcode-card"
+          >
+            <div class="card-bar">
+              <span class="dot red"></span><span class="dot yellow"></span
+              ><span class="dot green"></span>
+              <span class="card-bar-label">leetcode.exe</span>
+            </div>
+            <div class="connect-card-body">
+              <div class="connect-icon">&lt;/&gt;</div>
+              <h3>LEETCODE</h3>
+              <p>DSA battles &amp; algorithmic achievements.</p>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ═══ FOOTER — Simple like reference ═══ -->
     <footer class="footer">
-      <p>© Pratham Arora.</p>
+      <div class="footer-links">
+        <a href="Resume Pratham.pdf" download>📄 Resume</a>
+        <a href="https://github.com/Pratham-000" target="_blank">⌥ GitHub</a>
+        <a
+          href="https://linkedin.com/in/pratham-arora-ab3602213"
+          target="_blank"
+          >in LinkedIn</a
+        >
+        <a href="https://leetcode.com/u/prathamarora925/" target="_blank"
+          >&lt;/&gt; LeetCode</a
+        >
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=prathamarora925@email.com"
+          target="_blank"
+          >✉ Email</a
+        >
+      </div>
+      <p class="footer-copy">
+        © <span id="year"></span> Pratham Arora. Built with passion &amp; lots
+        of Creativity.
+      </p>
     </footer>
 
     <script src="script.js"></script>
